@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--primary-color: #352a11;
+	--secondary-color: #a0927f;
+	--accent-color: #ae6e29;
+	--success-color: #5dc232;
+	--error-code: #f44336;
+	--info-color: #2196f3;
+}
+
+body {
+	font-family: sans-serif;
+	color: var(--primary-color);
+}
+
+#app {
+	margin: 1.5rem; 
+	gap: 1.5rem; 
+	@media screen and (min-width: 768px) {
+		margin-left: 7rem;
+		margin-right: 7rem; 
+	}
+}
