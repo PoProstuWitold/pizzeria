@@ -1,5 +1,5 @@
 import { createServer } from 'node:http'
-import { readFile } from 'node:fs'
+import { readFile, existsSync } from 'node:fs'
 import { extname } from 'node:path'
 
 const port = 3005
@@ -7,6 +7,11 @@ const port = 3005
 const server = createServer((req, res) => {
 	let defaultPath = './src'
     let filePath = req.url === '/' ? `${defaultPath}/index.html` : `${defaultPath}${req.url}`
+
+	// próba porównania ścieżki url z ścieżką na serwerze jeśli użytkownik wpisał ją ręcznie
+	// w formie typu: /string1/string2/.../stringN
+	const exist = existsSync(filePath)
+	if (!exist) filePath = `${defaultPath}/${cutString(req.url)}`
 
     const extension = String(extname(filePath)).toLowerCase()
     const mimeTypes = {
@@ -41,3 +46,15 @@ const server = createServer((req, res) => {
 server.listen(port, () => {
     console.log(`Server is listening on port: ${port}. Version of Node.js: ${process.version}`)
 })
+
+function cutString(s) {
+    const words = ['css', 'js', 'assets']
+    for (const word of words) {
+        const index = s.indexOf(word)
+        if (index !== -1) {
+            return s.substring(index)
+        }
+    }
+    return 'index.html'
+}
+
