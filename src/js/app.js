@@ -1,10 +1,10 @@
+import { ErrorComponent } from './components/ErrorComponent.js'
+
 /*
 
 Zdecydowałem się użyć prostego SPA.
-Jako system routingu użyłem techniki zwanej jako Hash-based routing, która polega na zmianie adresu URL po znaku #.
-Daje to możliwość zmiany zawartości strony bez przeładowywania całej strony
-oraz pozwala na uniknięcie błędu 404 w przypadku gdy użytkownik wpisze adres URL ręcznie,
-a przeglądarka nie wspiera HTML5 History API.
+Jako system routingu użyłem HistoryAPI, które jest wspierane przez wszystkie przeglądarki.
+Daje to możliwość zmiany zawartości strony bez przeładowywania całej strony w elegancki i nowoczesny sposób.
 
 */
 
@@ -12,34 +12,32 @@ class SinglePageApplication {
     constructor(options) {
         this.routes = options.routes
 
-		/*
-		Przekierowanie na stronę główną w przypadku gdy użytkownik wpisze adres URL ręcznie.
-		Główny adres URL to '/' lub '/#/'.
-		*/
-		if(location.pathname !== '/') {
-			location.pathname = '/'
-		}
+        // event polegający na zmianie adresu URL
+        window.addEventListener('popstate', this.render.bind(this))
 
-		// event polegający na zmianie adresu URL po znaku #
-        window.addEventListener('hashchange', this.render.bind(this))
-
-		// event polegający na załadowaniu strony
+        // event polegający na załadowaniu strony
         window.addEventListener('DOMContentLoaded', this.render.bind(this))
 
-		console.log('Single Page Application has been mounted correctly')
+        console.log('Single Page Application has been mounted correctly')
     }
 
     async render() {
-        let hash = location.hash.replace('#', '')
-        if (hash === '') hash = '/'
-        const route = this.routes[hash]
-        if (!route) return this.renderError('Page not found', 404)
-        const content = await route()
-        document.getElementById('app').innerHTML = content
+        let path = location.pathname
+        if (path === '') path = '/'
+        const route = this.routes[path]
+        if (!route) return this.renderError(404, 'Strona o podanym adresie nie istnieje')
+        const component = await route()
+        document.getElementById('app').innerHTML = component.template
+
+        // z racji, że strona jest dynamicznie renderowana, 
+        // trzeba wywołać funkcję callback, która zapewni działanie eventów, jeśli to potrzebne
+        if (component.callback) await component.callback()
     }
 
-    async renderError(message, code) {
-        document.getElementById('app').innerHTML = `<h1>Error ${code}: ${message}</h1>`
+    async renderError(code = 500, message = 'Wewnętrzny błąd serwera') {
+		const errComponent = ErrorComponent(code, message)
+        document.getElementById('app').innerHTML = errComponent.template
+		errComponent.callback()
     }
 }
 
@@ -52,5 +50,5 @@ const routes = {
 }
 
 const spa = new SinglePageApplication({
-	routes,
+    routes
 })

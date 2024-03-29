@@ -1,7 +1,11 @@
 export const MenuComponent = () => {
 	document.title = 'Nasze menu'
 
-	return `
+	const callback = async () => {
+		console.log(`MenuComponent callback has been called`)
+	}
+
+	const template = /*html*/ `
 		<div>
 			<h1>Menu</h1>
 			<p>Nasz lokal oferuje szeroki wybór dań kuchni włoskiej jak i fastfoodowej</p>
@@ -43,4 +47,9 @@ export const MenuComponent = () => {
 			</ol>
 		</div>
 	`
+
+	return {
+		template,
+		callback
+	}
 }

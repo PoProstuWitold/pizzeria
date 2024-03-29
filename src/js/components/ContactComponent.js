@@ -1,7 +1,11 @@
 export const ContactComponent = () => {
 	document.title = 'Kontakt'
 
-	return `
+	const callback = async () => {
+		console.log(`ContactComponent callback has been called`)
+	}
+
+	const template = /*html*/`
 		<div>
 			<h1>Kontakt</h1>
 			<p> Najłatwiej skontaktować się z nami w podane sposoby</p>
@@ -11,4 +15,9 @@ export const ContactComponent = () => {
 			<p>adres: 12-345 Lublin, ul. Anakina Skywalkera 17</p>
 		</div>
 	`
+
+	return {
+		template,
+		callback
+	}
 }

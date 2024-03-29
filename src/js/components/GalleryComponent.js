@@ -1,7 +1,11 @@
 export const GalleryComponent = () => {
 	document.title = 'Galeria'
 
-	return `
+	const callback = async () => {
+		console.log(`GalleryComponent callback has been called`)
+	}
+
+	const template = /*html*/`
 		<div>
 			<h1>Galeria</h1>
 			<p>Poniżej prezentujemy zdjęcia naszego lokalu jak i wyrobów naszych kucharzy</p>
@@ -12,4 +16,9 @@ export const GalleryComponent = () => {
 			<p>zdjecie5.jpg</p>
 		</div>
 	`
+
+	return {
+		template,
+		callback
+	}
 }
