@@ -1,5 +1,3 @@
-import { ErrorComponent } from './components/ErrorComponent.js'
-
 /*
 
 Zdecydowałem się użyć prostego SPA.
@@ -38,7 +36,7 @@ class SinglePageApplication {
     }
 
     async renderError(code = 500, message = 'Wewnętrzny błąd serwera') {
-		const errComponent = ErrorComponent(code, message)
+		const errComponent = (await import('./components/ErrorComponent.js')).ErrorComponent(code, message)
         document.getElementById('app').innerHTML = errComponent.template
 		errComponent.callback()
     }
