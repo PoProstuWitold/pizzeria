@@ -16,7 +16,10 @@ class SinglePageApplication {
         window.addEventListener('popstate', this.render.bind(this))
 
         // event polegający na załadowaniu strony
-        window.addEventListener('DOMContentLoaded', this.render.bind(this))
+        window.addEventListener('DOMContentLoaded', () => {
+            this.addLinkClickHandlers()
+            this.render()
+        })
 
         console.log('Single Page Application has been mounted correctly')
     }
@@ -38,6 +41,20 @@ class SinglePageApplication {
 		const errComponent = ErrorComponent(code, message)
         document.getElementById('app').innerHTML = errComponent.template
 		errComponent.callback()
+    }
+
+	addLinkClickHandlers() {
+		// powoduje, że po kliknięciu w link będący częścią nawigacji strony,
+		// witryna nie przeładuje się (unikniemy niechcianego efektu "blyskania" strony)
+        const links = document.getElementsByClassName('navbtn')
+        for (const link of links) {
+            link.addEventListener('click', (event) => {
+                event.preventDefault()
+                const href = link.getAttribute('href')
+                history.pushState(null, '', href)
+                this.render()
+            })
+        }
     }
 }
 
