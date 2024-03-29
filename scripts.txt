@@ -1,6 +1,3 @@
-# TailwindCSS 
-npx tailwindcss -i ./src/css/main.css -o ./src/css/generated.css --watch --minify
-
 # Docker
 docker buildx b -t poprostuwitold/pizzeria .
 docker run -p 3005:3005 --network=host -it poprostuwitold/pizzeria

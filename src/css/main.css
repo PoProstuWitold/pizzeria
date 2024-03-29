@@ -1,6 +1,44 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+* {
+	box-sizing: border-box;
+	border-width: 0;
+	margin: 0;
+}
+
+html {
+	line-height: 1.5;
+	tab-size: 4;
+	font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-feature-settings: normal;
+	font-variation-settings: normal;
+}
+
+body {
+	margin: 0;
+	line-height: inherit;
+	font-family: sans-serif;
+	color: var(--primary-color);
+}
+
+a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+button {
+  	background-color: transparent;
+	cursor: pointer;
+}
+
+img,
+svg{
+  	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.hidden {
+  display: none;
+}
 
 :root {
 	--primary-color: #352a11;
@@ -9,11 +47,6 @@
 	--success-color: #5dc232;
 	--error-code: #f44336;
 	--info-color: #2196f3;
-}
-
-body {
-	font-family: sans-serif;
-	color: var(--primary-color);
 }
 
 #app {
@@ -75,6 +108,7 @@ body {
 	gap: 2rem; 
 	justify-content: center; 
 	align-items: center; 
+	list-style: none;
 
 	@media (min-width: 768px) { 
 		display: flex; 
@@ -114,10 +148,6 @@ body {
 	@media (min-width: 768px) { 
 		display: none; 
 	}
-}
-
-.hidden {
-	display: none; 
 }
 
 .mobile-menu {
