@@ -1,11 +1,3 @@
-import {
-	AboutComponent,
-	MainComponent,
-	MenuComponent,
-	GalleryComponent,
-	ContactComponent,
-} from './components/index.js'
-
 /*
 
 Zdecydowałem się użyć prostego SPA.
@@ -19,6 +11,14 @@ a przeglądarka nie wspiera HTML5 History API.
 class SinglePageApplication {
     constructor(options) {
         this.routes = options.routes
+
+		/*
+		Przekierowanie na stronę główną w przypadku gdy użytkownik wpisze adres URL ręcznie.
+		Główny adres URL to '/' lub '/#/'.
+		*/
+		if(location.pathname !== '/') {
+			location.pathname = '/'
+		}
 
 		// event polegający na zmianie adresu URL po znaku #
         window.addEventListener('hashchange', this.render.bind(this))
@@ -44,11 +44,11 @@ class SinglePageApplication {
 }
 
 const routes = {
-    '/': async () => MainComponent(),
-    '/o-nas': async () => AboutComponent(),
-	'/menu': async () => MenuComponent(),
-	'/galeria': async () => GalleryComponent(),
-	'/kontakt': async () => ContactComponent()
+    '/': async () => (await import('./components/MainComponent.js')).MainComponent(),
+    '/o-nas': async () => (await import('./components/AboutComponent.js')).AboutComponent(),
+	'/menu': async () => (await import('./components/MenuComponent.js')).MenuComponent(),
+	'/galeria': async () => (await import('./components/GalleryComponent.js')).GalleryComponent(),
+	'/kontakt': async () => (await import('./components/ContactComponent.js')).ContactComponent()
 }
 
 const spa = new SinglePageApplication({

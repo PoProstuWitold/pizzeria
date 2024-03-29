@@ -5,10 +5,7 @@ Stos technologiczny:
 - HTML5
 - CSS3
 - JavaScript (ES6+)
-- Node.js (opcjonalnie jako "live server")
+- Node.js (serwer do uruchomienia aplikacji)
 
 ### Jak uruchomić?
-Istnieje kilka metod uruchomienia, a wśród nich:
-1. (ZALECANE) Użyć polecenia ``node server.mjs``. Wymagane jest środowisko ``Node.js``.
-2. (NIEZALECANE) Otworzyć bezpośrednio plik ``index.html`` w przeglądarce.
-3. Użyć dowolnego ``live-server`` (np. tego z dodatków Visual Studio Code). W przypadku kiedy strona nie wczyta się prawidłowo, należy kliknąć w folder ``src`` w wybranej przeglądarce.
+Z racji, że aplikacja używa dynamicznego importowania komponentów, wymagane jest uruchomienie jej z poziomu serwera. W tym celu należy użyć polecenia ``node server.mjs`` będąc w głównym katalogu projektu. Wymagane jest środowisko **[Node.js](https://nodejs.org/)**. Aplikacja była realizowana pod ten sposób uruchamiania.
