@@ -1,0 +1,66 @@
+.contact-localization {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 10px;
+	gap: 0.5rem;
+}
+
+.contact-info {
+	display: flex;
+	width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+	gap: 2rem;
+}
+
+.googlemap {
+	width: 100%;
+	margin: auto;
+	background: var(--accent-color);
+	overflow: hidden;
+}
+
+.googlemap > iframe {
+    width: 100%;
+    height: auto;
+    min-height: 70vh;
+    border: 0;
+}
+
+.contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+	gap: 1rem;
+}
+
+.contact-ways {
+	margin: 0;
+	padding: 0 20px;
+}
+
+@media screen and (min-width: 768px) {
+	.contact-info {
+		flex-direction: row;
+	}
+
+	.contact-section {
+        flex-basis: 30%; /* Szerokość danych kontaktowych na desktopach */
+    }
+
+	.contact-localization {
+		flex-basis: 65%;
+	}
+}
+
+.contact-mail {
+	text-decoration: underline;
+}
+
+.contact-inner-link {
+	text-decoration: underline;
+	font-weight: bold;
+	font-style: italic;
+}
