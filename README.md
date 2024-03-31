@@ -22,3 +22,6 @@ docker run -p 3005:3005 --network=host -it poprostuwitold/pizzeria
 ```
 
 W obu przypadkach aplikacja będzie dostępna pod adresem ``localhost:3005`` lub ``TWOJE_IP:3005``.
+
+## Disclaimer
+Wszystkie obrazki są na licencji [Pixabay](https://pixabay.com/service/license-summary/), czyli w skrócie dozwolone jest używanie tych obrazków za darmo bez wzmianki autorów, aczkolwiek zabronione jest wykorzystywanie ich w celach komercyjnych.
