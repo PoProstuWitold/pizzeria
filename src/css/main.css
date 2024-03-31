@@ -45,16 +45,18 @@ svg{
 	--secondary-color: #a0927f;
 	--accent-color: #ae6e29;
 	--success-color: #5dc232;
-	--error-code: #f44336;
+	--error-color: #f44336;
 	--info-color: #2196f3;
 }
 
 #app {
 	margin: 1.5rem; 
 	gap: 1.5rem; 
+    height: 85vh;
 	@media screen and (min-width: 768px) {
 		margin-left: 7rem;
 		margin-right: 7rem; 
+		height: 90vh;
 	}
 }
 
@@ -76,6 +78,19 @@ svg{
 	text-align: center; 
 	color: #ffffff; 
 	background: var(--primary-color);
+}
+
+footer {
+	display: flex; 
+	flex-direction: column; 
+	justify-content: center; 
+	align-items: center; 
+	padding: 1rem; 
+	font-weight: 900;
+	background: gray; 
+	color: #ffffff; 
+	font-size: 0.75rem;
+	line-height: 1rem; 
 }
 
 .navigation {
