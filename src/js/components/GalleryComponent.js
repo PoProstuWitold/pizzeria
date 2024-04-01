@@ -10,7 +10,7 @@ export const GalleryComponent = () => {
 	}
 
 	const template = /*html*/`
-		<div>
+		<div class="gallery-container">
 			<h1>Galeria</h1>
 			<p>Poniżej prezentujemy zdjęcia naszego lokalu jak i wyrobów naszych kucharzy</p>
 			<p>zdjecie1.jpg</p>

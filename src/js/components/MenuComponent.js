@@ -24,8 +24,10 @@ export const MenuComponent = () => {
 
 	const template = /*html*/ `
 		<div class="menu-container">
-			<h1>Menu</h1>
-			<p>Nasz lokal oferuje szeroki wybór dań kuchni włoskiej jak i fastfoodowej. Gwarantujemy, że każdy znajdzie u nas coś dla siebie!</p>
+			<div>
+				<h1>Menu</h1>
+				<p>Nasz lokal oferuje szeroki wybór dań kuchni włoskiej jak i fastfoodowej. Gwarantujemy, że każdy znajdzie u nas coś dla siebie!</p>
+			</div>
 			<div class="menu-section">
 				<div>
 					<button class="collapsible">Pizza</button>

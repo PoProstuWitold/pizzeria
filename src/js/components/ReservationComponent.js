@@ -10,7 +10,7 @@ export const ReservationComponent = () => {
 	}
 
 	const template = /*html*/`
-		<div>
+		<div class="reservation-container">
 			<h1>Rezerwacja</h1>
 			<p>Dokonaj rezerwacji stolika na jedno posiedzenie lub całej sali, nawet na kilka dni!
 			Odpowiadamy na zgłoszenia w ciągu maksymalnie 3 dni roboczych.
