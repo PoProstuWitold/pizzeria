@@ -41,7 +41,7 @@
 	padding: 0 20px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1400px) {
 	.contact-info {
 		flex-direction: row;
 	}
