@@ -125,7 +125,7 @@ footer {
 	align-items: center; 
 	list-style: none;
 
-	@media (min-width: 768px) { 
+	@media (min-width: 850px) { 
 		display: flex; 
 		flex-direction: row; 
 	}
@@ -149,7 +149,7 @@ footer {
 	height: 4rem; 
 	font-style: italic; 
 
-	@media (min-width: 768px) { 
+	@media (min-width: 850px) { 
 		display: none; 
 	}
 
@@ -160,7 +160,7 @@ footer {
 }
 
 .mobile-menu-trigger {
-	@media (min-width: 768px) { 
+	@media (min-width: 850px) { 
 		display: none; 
 	}
 }

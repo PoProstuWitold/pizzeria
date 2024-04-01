@@ -1,5 +1,0 @@
-export * from './AboutComponent.js'
-export * from './ContactComponent.js'
-export * from './GalleryComponent.js'
-export * from './MainComponent.js'
-export * from './MenuComponent.js'

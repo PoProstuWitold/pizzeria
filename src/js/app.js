@@ -61,7 +61,8 @@ const routes = {
     '/o-nas': async () => (await import('./components/AboutComponent.js')).AboutComponent(),
 	'/menu': async () => (await import('./components/MenuComponent.js')).MenuComponent(),
 	'/galeria': async () => (await import('./components/GalleryComponent.js')).GalleryComponent(),
-	'/kontakt': async () => (await import('./components/ContactComponent.js')).ContactComponent()
+	'/kontakt': async () => (await import('./components/ContactComponent.js')).ContactComponent(),
+	'/rezerwacja': async () => (await import('./components/ReservationComponent.js')).ReservationComponent()
 }
 
 const spa = new SinglePageApplication({
