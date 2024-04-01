@@ -1,2 +1,148 @@
 /* MAIN COMPONENT */
 
+
+.main-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.main-image {
+	color: white;
+	background-image: url('../assets/img/pizza-bg.webp');
+	background-size: cover;
+	height: 40vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: calc(100vw - 15px);
+	padding: 2rem;
+	font-size: 1.5rem;
+	-webkit-text-fill-color: white;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+	h2 {
+		font-size: 1.5rem;
+	}
+	@media screen and (min-width: 768px) {
+		font-size: 3rem;
+		h2 {
+			font-size: 2rem;
+		}
+	}
+}
+
+.main-content {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	width: 100%;
+	padding: 10px;
+	@media screen and (min-width: 768px) {
+		padding: 10px 5rem;
+	}
+}
+
+.main-reviews {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	width: 100%;
+	align-items: center;
+	@media screen and (min-width: 1400px) {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+.review-box {
+	flex: 1;
+	border: 1px solid var(--primary-color);
+	border-radius: 10px;
+	padding: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+	@media screen and (min-width: 1400px) {
+		width: 300px;
+	}
+}
+  
+.rating {
+	font-size: 1.5em;
+	color: #f39c12;
+}
+  
+.reviewer-name {
+	font-weight: bold;
+	margin-top: 10px;
+}
+  
+.review-text {
+	margin-top: 10px;
+	font-style: italic;
+	text-align: justify;
+	display: -webkit-box;
+	-webkit-line-clamp: 3; /* liczba linii do wyświetlenia */
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	@media screen and (min-width: 1420px) {
+		height: 70px;
+	}
+}
+
+.review-link {
+	color: #000;
+	text-decoration: none;
+	font-weight: bold;
+	transition: all 0.1s ease-in-out; 
+}
+  
+.review-link:hover {
+	color: var(--accent-color);
+}
+  
+.main-more-reviews {
+	text-align: right;
+}
+
+.main-offer {
+	display: flex;
+	margin: auto;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+	height: 100%;
+	padding: 0 2px;
+}
+  
+.main-offer-text {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	text-align: justify;
+}
+
+.main-offer-image {
+	img {
+		border-radius: 20px;
+		height: auto;
+	}
+}
+  
+@media screen and (min-width: 1420px) {
+	.main-offer {
+	  	flex-direction: row;
+		align-items: stretch;
+	}
+	.main-offer-text {
+		width: 65%;
+  	}
+	.main-offer-image {
+	  	width: 35%;
+		img {
+			max-width: 100%;
+		}
+	}
+}

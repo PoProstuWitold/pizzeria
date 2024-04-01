@@ -263,7 +263,7 @@ export const MenuComponent = () => {
 			</div>
 			<div class="menu-section">
 				<div>
-					<button class="collapsible">Napoje</button>
+					<button class="collapsible">Napoje (500ml)</button>
 					<div class="collap-content">
 						<table class="menu-content">
 							<thead>
@@ -287,15 +287,50 @@ export const MenuComponent = () => {
 								</tr>
 								<tr class="menu-item">
 									<td>
-										<p class="menu-name">3. Sok owocowy</p>
+										<p class="menu-name">3. Fanta</p>
+									</td>
+									<td class="menu-price">5,00 zł</td>
+								</tr>
+								<tr class="menu-item">
+									<td>
+										<p class="menu-name">4. Sok owocowy</p>
 									</td>
 									<td class="menu-price">4,00 zł</td>
 								</tr>
 								<tr class="menu-item">
 									<td>
-										<p class="menu-name">4. Woda gazowana</p>
+										<p class="menu-name">5. Woda gazowana</p>
 									</td>
 									<td class="menu-price">3,50 zł</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="menu-section">
+				<div>
+					<button class="collapsible">Napoje alkoholowe</button>
+					<div class="collap-content">
+						<table class="menu-content">
+							<thead>
+								<tr>
+									<th>Napój</th>
+									<th>Cena</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="menu-item">
+									<td>
+										<p class="menu-name">1. Piwo Perła Export (500ml)</p>
+									</td>
+									<td class="menu-price">10,00 zł</td>
+								</tr>
+								<tr class="menu-item">
+									<td>
+										<p class="menu-name">2. Piwo Książęce Jasne pszeniczne (500ml)</p>
+									</td>
+									<td class="menu-price">12,00 zł</td>
 								</tr>
 							</tbody>
 						</table>
