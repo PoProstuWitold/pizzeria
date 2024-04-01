@@ -1,13 +1,17 @@
+import { loadStyles } from '../utils.js'
+
 export const AboutComponent = () => {
 	document.title = 'O nas'
 
 	const callback = async () => {
-		console.log(`AboutComponent callback has been called`)
+		loadStyles('css/AboutComponent.css')
 
 		const button = document.getElementById('myButton')
 		button.addEventListener('click', () => {
 			alert('test')
 		})
+
+		console.log(`AboutComponent callback has been called`)
 	}
 
 	const template = /*html*/`

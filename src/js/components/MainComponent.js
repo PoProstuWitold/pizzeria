@@ -1,7 +1,11 @@
+import { loadStyles } from '../utils.js'
+
 export const MainComponent = () => {
 	document.title = 'GitGud Pizza'
 
 	const callback = async () => {
+		loadStyles('css/MainComponent.css')
+		
 		console.log(`MainComponent callback has been called`)
 	}
 

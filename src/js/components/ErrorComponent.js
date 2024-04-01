@@ -5,6 +5,7 @@ export const ErrorComponent = (code, message) => {
 
 	const callback = async () => {
 		loadStyles('css/ErrorComponent.css')
+		
 		console.log(`ErrorComponent callback has been called`)
 	}
 

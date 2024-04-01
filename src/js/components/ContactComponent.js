@@ -5,7 +5,7 @@ export const ContactComponent = () => {
 
 	const callback = async () => {
 		loadStyles('css/ContactComponent.css')
-
+		
 		console.log(`ContactComponent callback has been called`)
 	}
 

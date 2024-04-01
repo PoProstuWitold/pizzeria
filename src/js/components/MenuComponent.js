@@ -4,6 +4,7 @@ export const MenuComponent = () => {
 	document.title = 'Nasze menu'
 
 	const callback = async () => {
+		loadStyles('css/MenuComponent.css')
 
 		const coll = document.getElementsByClassName('collapsible')
 		for (let i = 0; i < coll.length; i++) {
@@ -17,8 +18,7 @@ export const MenuComponent = () => {
 				}
 			})
 		}
-
-		loadStyles('css/MenuComponent.css')
+		
 		console.log(`MenuComponent callback has been called`)
 	}
 

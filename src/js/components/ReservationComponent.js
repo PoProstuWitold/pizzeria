@@ -1,7 +1,11 @@
+import { loadStyles } from '../utils.js'
+
 export const ReservationComponent = () => {
 	document.title = 'Rezerwacja'
 
 	const callback = async () => {
+		loadStyles('css/ReservationComponent.css')
+
 		console.log(`ReservationComponent callback has been called`)
 	}
 

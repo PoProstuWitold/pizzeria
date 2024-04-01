@@ -1,7 +1,11 @@
+import { loadStyles } from '../utils.js'
+
 export const GalleryComponent = () => {
 	document.title = 'Galeria'
 
 	const callback = async () => {
+		loadStyles('css/GalleryComponent.css')
+
 		console.log(`GalleryComponent callback has been called`)
 	}
 
