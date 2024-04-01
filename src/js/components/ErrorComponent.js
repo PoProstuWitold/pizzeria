@@ -18,7 +18,6 @@ export const ErrorComponent = (code, message) => {
 
 	return {
 		template,
-		callback,
-		loadStyles
+		callback
 	}
 }
