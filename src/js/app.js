@@ -9,6 +9,7 @@ Daje to możliwość zmiany zawartości strony bez przeładowywania całej stron
 class SinglePageApplication {
     constructor(options) {
         this.routes = options.routes
+		this.eventListeners = {} // przechowuje referencje do nasłuchiwaczy zdarzeń
 
         // event polegający na zmianie adresu URL
         window.addEventListener('popstate', this.render.bind(this))
@@ -27,12 +28,25 @@ class SinglePageApplication {
         if (path === '') path = '/'
         const route = this.routes[path]
         if (!route) return this.renderError(404, 'Strona o podanym adresie nie istnieje')
+
+		if (this.eventListeners[path]) {
+			// usuwamy nasłuchiwaczy zdarzeń, które były przypisane do poprzedniego komponentu
+			// ponieważ w przeciwnym razie zdarzenia będą się kumulować
+            this.eventListeners[path].forEach(listener => {
+                document.removeEventListener(listener.event, listener.handler)
+            })
+        }
+
         const component = await route()
         document.getElementById('app').innerHTML = component.template
 
         // z racji, że strona jest dynamicznie renderowana, 
         // trzeba wywołać funkcję callback, która zapewni działanie eventów, jeśli to potrzebne
-        if (component.callback) await component.callback()
+        if (component.callback) {
+			// zapisujemy referencje do nasłuchiwaczy zdarzeń, aby móc je usunąć w przyszłości,
+			// żeby się nie kumulowały
+			this.eventListeners[path] = await component.callback()
+		}
     }
 
     async renderError(code = 500, message = 'Wewnętrzny błąd serwera') {
