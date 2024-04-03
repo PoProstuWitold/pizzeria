@@ -6,11 +6,6 @@ export const AboutComponent = () => {
 	const callback = async () => {
 		loadStyles('css/AboutComponent.css')
 
-		const button = document.getElementById('myButton')
-		button.addEventListener('click', () => {
-			alert('test')
-		})
-
 		console.log(`AboutComponent callback has been called`)
 	}
 

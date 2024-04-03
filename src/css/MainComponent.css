@@ -1,6 +1,5 @@
 /* MAIN COMPONENT */
 
-
 .main-container {
 	display: flex;
 	justify-content: center;
@@ -21,14 +20,19 @@
 	font-size: 1.5rem;
 	-webkit-text-fill-color: white;
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-	h2 {
-		font-size: 1.5rem;
-	}
-	@media screen and (min-width: 768px) {
+}
+
+.main-image h2 {
+	font-size: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+	.main-image {
 		font-size: 3rem;
-		h2 {
-			font-size: 2rem;
-		}
+	}
+	
+	.main-image h2 {
+		font-size: 2rem;
 	}
 }
 
@@ -38,7 +42,10 @@
 	gap: 1rem;
 	width: 100%;
 	padding: 10px;
-	@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 768px) {
+	.main-content {
 		padding: 10px 5rem;
 	}
 }
@@ -49,7 +56,10 @@
 	gap: 1rem;
 	width: 100%;
 	align-items: center;
-	@media screen and (min-width: 1400px) {
+}
+
+@media screen and (min-width: 1400px) {
+	.main-reviews {
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -63,7 +73,10 @@
 	padding: 10px;
 	margin-bottom: 10px;
 	width: 100%;
-	@media screen and (min-width: 1400px) {
+}
+
+@media screen and (min-width: 1400px) {
+	.review-box {
 		width: 300px;
 	}
 }
@@ -82,11 +95,11 @@
 	margin-top: 10px;
 	font-style: italic;
 	text-align: justify;
-	display: -webkit-box;
-	-webkit-line-clamp: 3; /* liczba linii do wyświetlenia */
-	-webkit-box-orient: vertical;
 	overflow: hidden;
-	@media screen and (min-width: 1420px) {
+}
+
+@media screen and (min-width: 1420px) {
+	.review-text {
 		height: 70px;
 	}
 }
@@ -123,13 +136,11 @@
 	text-align: justify;
 }
 
-.main-offer-image {
-	img {
-		border-radius: 20px;
-		height: auto;
-	}
+.main-offer-image img {
+	border-radius: 20px;
+	height: auto;
 }
-  
+
 @media screen and (min-width: 1420px) {
 	.main-offer {
 	  	flex-direction: row;
@@ -140,8 +151,8 @@
   	}
 	.main-offer-image {
 	  	width: 35%;
-		img {
-			max-width: 100%;
-		}
+	}
+	.main-offer-image img {
+		max-width: 100%;
 	}
 }

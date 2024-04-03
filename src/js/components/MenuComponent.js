@@ -33,7 +33,6 @@ export const MenuComponent = () => {
 					<button class="collapsible">Pizza</button>
 					<div class="collap-content">
 					    <!-- Faktyczna zawartość -->
-						<!-- HTML -->
 						<table class="menu-content">
 							<thead>
 								<tr>
@@ -154,8 +153,6 @@ export const MenuComponent = () => {
 								</tr>
 							</tbody>
 						</table>
-
-						<!-- Faktyczna zawartość -->
 					</div>
 				</div>
 			</div>

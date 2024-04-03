@@ -22,8 +22,8 @@ export const MainComponent = () => {
 					Nam możesz nie ufać, więc posłuchaj co mają do powiedzenia koneserzy pizzy i kuchni włoskiej odwiedzający nasz lokal!
 					</p>
 				</div>
-				<div class="main-reviews">
 				<!-- RECENZJE -->
+				<div class="main-reviews">
 					<div class="review-box">
 						<div class="rating">
 						★★★★★
@@ -68,7 +68,6 @@ export const MainComponent = () => {
 						Ania, 12 marca 2024
 						</div>
 					</div>
-				<!-- RECENZJE -->
 				</div>
 				<!-- Opinie Pollub WEiE na Google -->
 				<div class="main-more-reviews">

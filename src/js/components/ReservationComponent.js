@@ -18,7 +18,7 @@ export const ReservationComponent = () => {
 			e.preventDefault()
 			const formData = new FormData(form)
 			const data = Object.fromEntries(formData)
-			console.log('data', data)
+			// console.log('data', data)
 
 			// Walidacja
 			let isValid = true
@@ -88,7 +88,9 @@ export const ReservationComponent = () => {
 
 		const handleFocusLost = (e) => {
 			const code = e.target.value
-			console.log('focus lost', code)
+
+			// console.log('focus lost', code)
+			
 			const doesExist = reservationExists(code)
 			if(doesExist) {
 				formElements.code.box.classList.add('info')
@@ -223,8 +225,7 @@ export const ReservationComponent = () => {
 				</p>
 			</div>
 			<div class="reservations">
-				<!-- RESERVATION CARD -->
-				<!-- RESERVATION CARD -->
+				<!-- RESERVATION CARDS -->
 			</div>
 		</div>
 	`

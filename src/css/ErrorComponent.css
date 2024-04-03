@@ -27,7 +27,8 @@
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
-	&:hover {
-		background-color: #b22d24;
-	}
+}
+
+.error-button:hover {
+	background-color: #b22d24;
 }

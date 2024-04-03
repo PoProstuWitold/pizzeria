@@ -53,7 +53,10 @@ svg{
 	margin: 0 1.5rem; 
 	gap: 1.5rem; 
     min-height: 85vh;
-	@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 768px) {
+	#app {
 		margin-left: 7rem;
 		margin-right: 7rem; 
 		min-height: 90vh;
@@ -111,10 +114,11 @@ footer {
 	align-items: center; 
 	height: 4rem; 
 	font-weight: 800; 
-	img {
-		width: 2.5rem; 
-		height: 2.5rem; 
-	}
+}
+
+.logo img {
+	width: 2.5rem; 
+	height: 2.5rem; 
 }
 
 .desktop-menu {
@@ -124,23 +128,24 @@ footer {
 	justify-content: center; 
 	align-items: center; 
 	list-style: none;
+}
 
-	@media (min-width: 850px) { 
+@media (min-width: 850px) { 
+	.desktop-menu {
 		display: flex; 
 		flex-direction: row; 
 	}
+}
 
-	li {
-		a {
-			border-radius: 5px;
-			padding: 0.75rem 1rem;
-			transition: all 0.2s ease-in-out;
-		}
-		a:hover {
-			background-color: var(--accent-color);
-			color: white;
-		}
-	}
+.desktop-menu li a {
+	border-radius: 5px;
+	padding: 0.75rem 1rem;
+	transition: all 0.2s ease-in-out;
+}
+
+.desktop-menu li a:hover {
+	background-color: var(--accent-color);
+	color: white;
 }
 
 .mobile-menu-button {
@@ -148,19 +153,21 @@ footer {
 	align-items: center; 
 	height: 4rem; 
 	font-style: italic; 
+}
 
-	@media (min-width: 850px) { 
+@media (min-width: 850px) { 
+	.mobile-menu-button {
 		display: none; 
-	}
-
-	svg {
-		width: 2.5rem; 
-		height: 2.5rem;
 	}
 }
 
-.mobile-menu-trigger {
-	@media (min-width: 850px) { 
+.mobile-menu-button svg {
+	width: 2.5rem; 
+	height: 2.5rem;
+}
+
+@media (min-width: 850px) { 
+	.mobile-menu-trigger {
 		display: none; 
 	}
 }
@@ -177,19 +184,21 @@ footer {
 	color: #ffffff; 
 	text-transform: uppercase; 
 	background: var(--secondary-color);
+}
 
-	li {
-		display: flex; 
-		width: 100%; 
-		text-align: center; 
-		a {
-			width: 100%; 
-			border-radius: 10px;
-			padding: 0.25rem 0;
-			transition: all 0.2s ease-in-out;
-		}
-		a:hover {
-			background-color: var(--accent-color);
-		}
-	}
+.mobile-menu li {
+	display: flex; 
+	width: 100%; 
+	text-align: center; 
+}
+
+.mobile-menu li a {
+	width: 100%; 
+	border-radius: 10px;
+	padding: 0.25rem 0;
+	transition: all 0.2s ease-in-out;
+}
+
+.mobile-menu li a:hover {
+	background-color: var(--accent-color);
 }
