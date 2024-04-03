@@ -3,3 +3,139 @@
 .gallery-container {
 	padding: 10px;
 }
+
+.gallery {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+	margin: 2rem 0;
+	justify-items: center; /* Wycentrowanie elementów w poziomie */
+	align-items: start; /* Wycentrowanie elementów w pionie */
+	@media screen and (min-width: 768px) {
+		grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+	}
+}
+
+.gallery-item {
+	border: 1px solid #ccc;
+	padding: 1rem;
+	gap: 1rem;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+	display: flex;
+	flex-direction: column;
+	justify-content: center; /* Wycentrowanie elementów w poziomie */
+	align-items: center; /* Wycentrowanie elementów w pionie */
+	transition: all 0.3s ease-in-out;
+	img {
+		height: 200px;
+		width: auto;
+		border-radius: 5px;
+	}
+	&:hover {
+		background-color: #f0f0f0;
+		cursor: pointer;
+	}
+	
+	width: 100%; /* Karty zajmują całą dostępną szerokość */
+	@media screen and (min-width: 768px) {
+		max-width: 45rem; /* Maksymalna szerokość karty na większych ekranach */
+		img {
+			max-height: 110px;
+		}
+	}
+}
+
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	width: 95%; /* Set width to 80% */
+	@media screen and (min-width: 768px) {
+		width: 50%; /* Set width to 50% */
+	}
+}
+
+#close-dialog {
+    background-color: #f44336;
+	width: 30px;
+	height: 30px;
+    color: white;
+	font-weight: 900;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#close-dialog:hover {
+    background-color: #e60000; /* Darker red when mouse hovers over */
+}
+
+.dialog-container {
+	display: flex;
+	gap: 1rem;
+	flex-direction: column;
+	justify-content: stretch; /* Wycentrowanie elementów w poziomie */
+	align-items: center; /* Wycentrowanie elementów w pionie */
+}
+
+.dialog-header {
+    font-size: 1rem;
+	display: flex;
+	gap: 1rem;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.dialog-button {
+	border-radius: 10px;
+    font-size: 2em;
+    background: none;
+    border: none;
+    cursor: pointer;
+	color: black;
+	border: 3px solid black;
+	background-color: white;
+	position: absolute;
+	top: 55%;
+	width: 3.5rem;
+	opacity: 0.5;
+	transition: opacity 0.1s ease-in-out;
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.dialog-body {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+}
+
+.dialog-img {
+	margin: auto;
+	width: auto;
+	height: 17rem;
+	@media screen and (min-width: 768px) {
+		height: 20rem;
+	}
+	@media screen and (min-width: 1024px) {
+		height: 25rem;
+	}
+}
+
+#prev-dialog {
+	left: 3rem;
+	transform: translateY(-50%);
+}
+
+#next-dialog {
+	right: 3rem;
+	transform: translateY(-50%);
+}
