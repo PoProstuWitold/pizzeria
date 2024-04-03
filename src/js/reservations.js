@@ -67,7 +67,8 @@ export const loadReservations = () => {
             <p class="card-text"><strong>Liczba gości:</strong> ${reservation.guests}</p>
             <p class="card-text"><strong>Data i godzina:</strong> ${reservation.date}, ${reservation.time}</p>
             <p class="card-text"><strong>Typ:</strong> ${reservation.type}</p>
-        `;
+			<p class="card-text"><strong>Zgoda na zdjęcia:</strong> ${reservation.promoConsent ? 'Tak' : 'Nie'}</p>
+        `
 
         // Dodaj zdarzenie kliknięcia do przycisku usuwania
         card.querySelector('.delete-button').addEventListener('click', () => deleteReservation(reservation.code))

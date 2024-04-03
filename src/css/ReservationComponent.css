@@ -101,6 +101,20 @@ input[type="reset"] {
 	}
 }
 
+.info-message {
+	margin: 0.3rem 0;
+	color: var(--info-color);
+}
+
+.info {
+	label {
+		color: var(--info-color);
+	}
+	input {
+		border: 3px solid var(--info-color);
+	}
+}
+
 .input-buttons {
 	display: flex;
 	flex-direction: column;

@@ -55,11 +55,16 @@ export const ReservationComponent = () => {
 					isValid = false
 				} else {
 					element.box.classList.remove('error')
-					element.error.textContent = ''
+					if(!element.error.classList.contains('info-message')) {
+						element.error.textContent = ''
+					}
 				}
 			}
 
 			if(!isValid) return
+			formElements.code.box.classList.remove('info')
+			formElements.code.error.classList.remove('info-message')
+			formElements.code.error.textContent = ''
 			
 			reservationExists(data.code) 
 				? alert(`Rezerwacja "${data.code}" została zaktualizowana`) 
@@ -77,7 +82,26 @@ export const ReservationComponent = () => {
 				element.box.classList.remove('error')
 				element.error.textContent = ''
 			}
+			formElements.code.box.classList.remove('info')
+			formElements.code.error.classList.remove('info-message')
 		}
+
+		const handleFocusLost = (e) => {
+			const code = e.target.value
+			console.log('focus lost', code)
+			const doesExist = reservationExists(code)
+			if(doesExist) {
+				formElements.code.box.classList.add('info')
+				formElements.code.error.classList.add('info-message')
+				formElements.code.error.textContent = 'Edytujesz rezerwację o podanej nazwie'
+			} else {
+				formElements.code.box.classList.remove('info')
+				formElements.code.error.classList.remove('info-message')
+				formElements.code.error.textContent = ''
+			}
+		}
+
+		formElements.code.input.addEventListener('focusout', handleFocusLost)
 
 		form.addEventListener('reset', handleReset)
 		form.addEventListener('submit', handleSubmit)
@@ -93,6 +117,10 @@ export const ReservationComponent = () => {
 			{
 				event: 'reset',
 				handler: handleReset
+			},
+			{
+				event: 'focusout',
+				handler: handleFocusLost
 			}
 		]
 	}
@@ -108,6 +136,12 @@ export const ReservationComponent = () => {
 			<div class="reservation-section">
 				<form id="rezerwacja" method="POST">
 					<h2>Formularz rezerwacji</h2>
+					<!-- Pole tekstowe -->
+					<div id="codeBox" class="input-group1">
+						<label for="code">Nazwa rezerwacji:</label>
+						<input type="text" id="code" name="code">
+						<div class="error-message" id="codeError"></div>
+					</div>
 					<!-- Pole radio -->
 					<div id="issuerBox" class="issuer">
 						<fieldset class="input-group3">
@@ -123,14 +157,12 @@ export const ReservationComponent = () => {
 						</fieldset>
 						<div class="error-message" id="issuerError"></div>
 					</div>
-
 					<!-- Pole email -->
 					<div id="emailBox" class="input-group1">
 						<label for="email">Email:</label>
 						<input type="email" id="email" name="email">
 						<div class="error-message" id="emailError"></div>
 					</div>
-
 					<!-- Pole tekstowe -->
 					<div id="nameBox" class="input-group1">
 						<label for="name">Imię i nazwisko:</label>
@@ -142,31 +174,24 @@ export const ReservationComponent = () => {
 						<input type="text" id="pesel" name="pesel">
 						<div class="error-message" id="peselError"></div>
 					</div>
-					<div id="codeBox" class="input-group1">
-						<label for="code">Nazwa rezerwacji:</label>
-						<input type="text" id="code" name="code">
-						<div class="error-message" id="codeError"></div>
-					</div>
 					<div id="guestsBox" class="input-group1">
 						<label for="guests">Ilość osób:</label>
 						<input type="number" id="guests" name="guests" min="1" step="1"
 						onkeypress="return event.charCode >= 48">
 						<div class="error-message" id="guestsError"></div>
 					</div>
-				
-				
 					<!-- Pole date -->
 					<div id="dateBox" class="input-group1">
 						<label for="date">Data:</label>
 						<input type="date" id="date" name="date">
 						<div class="error-message" id="dateError"></div>
 					</div>
+					<!-- Pole time -->
 					<div id="timeBox" class="input-group1">
 						<label for="time">Czas:</label>
 						<input type="time" id="time" name="time">
 						<div class="error-message" id="timeError"></div>
 					</div>
-					
 					<!-- Lista wyboru -->
 					<div id="typeBox" class="input-group1">
 						<label for="type">Wybierz opcję:</label>
@@ -177,13 +202,12 @@ export const ReservationComponent = () => {
 						</select>
 						<div class="error-message" id="typeError"></div>
 					</div>
-				
 					<!-- Pole checkbox -->
 					<div class="input-group2">
 						<label for="promoConsent">Zgoda na użycie zdjęć w celach promocyjnych</label>
 						<input type="checkbox" id="promoConsent" name="promoConsent">
 					</div>
-
+					<!-- Przyciski -->
 					<div class="input-buttons">
 						<input type="submit" value="Wyślij">
 						<input type="reset" value="Resetuj">
