@@ -18,8 +18,7 @@ export const AboutComponent = () => {
 		<div class="about-container">
 			<h1>O nas</h1>
 			<p>Jesteśmy najlepszą wymyśloną pizzerią w Polsce! Działamy już ponad 20 lat. Serdecznie zapraszamy!</p>
-			<img src="assets/logo.png" alt="pizza">
-			<button id="myButton">Kliknij mnie!</button>
+			<p>Zapraszamy do sprawdzenia kodu źródłowego naszej <a class="source-code-linkg" href="https://github.com/PoProstuWitold/pizzeria" target="_blank">strony</a></p>
 		</div>
 	`
 

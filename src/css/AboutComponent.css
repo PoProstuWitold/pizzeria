@@ -3,3 +3,14 @@
 .about-container {
 	padding: 10px;
 }
+
+.about-container p {
+	text-align: justify;
+}
+
+.source-code-linkg {
+	font-weight: bold;
+	color: var(--accent-color);
+	font-style: italic;
+	text-decoration: underline;
+}
