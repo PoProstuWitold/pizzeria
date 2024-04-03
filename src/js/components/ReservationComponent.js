@@ -1,5 +1,6 @@
 import { loadStyles } from '../utils.js'
 import { getFormElements } from '../formElements.js'
+import { loadReservations, reservationExists, saveReservation } from '../reservations.js'
 
 export const ReservationComponent = () => {
 	document.title = 'Rezerwacja'
@@ -17,7 +18,7 @@ export const ReservationComponent = () => {
 			e.preventDefault()
 			const formData = new FormData(form)
 			const data = Object.fromEntries(formData)
-			// console.log('data', data)
+			console.log('data', data)
 
 			// Walidacja
 			let isValid = true
@@ -60,7 +61,14 @@ export const ReservationComponent = () => {
 
 			if(!isValid) return
 			
-			alert(JSON.stringify(data, null, 4))
+			reservationExists(data.code) 
+				? alert(`Rezerwacja "${data.code}" została zaktualizowana`) 
+				: alert(`Rezerwacja "${data.code}" została dodana`)
+
+			saveReservation(data)
+			loadReservations()
+			
+			// alert(JSON.stringify(data, null, 4))
 		}
 
 		const handleReset = () => {
@@ -73,6 +81,7 @@ export const ReservationComponent = () => {
 
 		form.addEventListener('reset', handleReset)
 		form.addEventListener('submit', handleSubmit)
+		loadReservations()
 
 		console.log(`ReservationComponent callback has been called`)
 
@@ -91,12 +100,12 @@ export const ReservationComponent = () => {
 	const template = /*html*/`
 		<div class="reservation-container">
 			<div>
-				<h1>Rezerwacja</h1>
+				<h1>Zarezerwuj lokal lub stolik</h1>
 				<p>Dokonaj rezerwacji stolika na jedno posiedzenie lub całej sali, nawet na kilka dni!
 				Odpowiadamy na zgłoszenia w ciągu maksymalnie 3 dni roboczych.
 				</p>
 			</div>
-			<div>
+			<div class="reservation-section">
 				<form id="rezerwacja" method="POST">
 					<h2>Formularz rezerwacji</h2>
 					<!-- Pole radio -->
@@ -105,11 +114,11 @@ export const ReservationComponent = () => {
   							<legend>Rezerwacja jako</legend>
 							<div class="input-group2">
 								<label for="private">Osoba prywatna</label>
-								<input type="radio" id="private" name="issuer" value="OSOBA_PRYWATNA">
+								<input type="radio" id="private" name="issuer" value="Osoba prywatna">
 							</div>
 							<div class="input-group2">
 								<label for="company">Firma</label>
-								<input type="radio" id="company" name="issuer" value="FIRMA">
+								<input type="radio" id="company" name="issuer" value="Firma">
 							</div>
 						</fieldset>
 						<div class="error-message" id="issuerError"></div>
@@ -162,9 +171,9 @@ export const ReservationComponent = () => {
 					<div id="typeBox" class="input-group1">
 						<label for="type">Wybierz opcję:</label>
 						<select id="type" name="type">
-							<option value="stolik">Stolik</option>
-							<option value="lokal">Lokal</option>
-							<option value="lokal_catering">Lokal z cateringiem</option>
+							<option value="Stolik">Stolik</option>
+							<option value="Lokal">Lokal</option>
+							<option value="Lokal z cateringiem">Lokal z cateringiem</option>
 						</select>
 						<div class="error-message" id="typeError"></div>
 					</div>
@@ -180,6 +189,18 @@ export const ReservationComponent = () => {
 						<input type="reset" value="Resetuj">
 					</div>
 				</form>
+			</div>
+			<div>
+				<h1>Twoje rezerwacje</h1>
+				<p>
+				Poniżej masz dostęp do swoich rezerwacji. 
+				Możesz je edytować lub usuwać, używając kolejno nazwy rezerwacji w formularzu
+				lub klikając przycisk po prawo.
+				</p>
+			</div>
+			<div class="reservations">
+				<!-- RESERVATION CARD -->
+				<!-- RESERVATION CARD -->
 			</div>
 		</div>
 	`

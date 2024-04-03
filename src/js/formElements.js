@@ -69,8 +69,8 @@ export const getFormElements = () => {
 				}
 	
 				return {
-					message: 'Nazwa rezerwacji musi mieć długość od 5 do 20 znaków',
-					valid: value.length >= 5 && value.length <= 20
+					message: 'Nazwa rezerwacji musi mieć długość od 3 do 10 znaków',
+					valid: value.length >= 3 && value.length <= 10
 				}
 			}
 		},
@@ -112,7 +112,7 @@ export const getFormElements = () => {
 				const date = new Date(value)
 				const now = new Date()
 	
-				const weekAhead = new Date().setDate(now.getDate() + 6)
+				const weekAhead = new Date().setDate(now.getDate() + 7)
 				const threeMonthsAhead = new Date().setMonth(now.getMonth() + 3)
 	
 				if(!(weekAhead <= date)) return {

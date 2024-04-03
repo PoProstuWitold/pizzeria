@@ -106,3 +106,57 @@ input[type="reset"] {
 	flex-direction: column;
 	gap: 1.5rem;
 }
+
+.card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 100%; /* Karty zajmują całą dostępną szerokość */
+    @media screen and (min-width: 480px) {
+        max-width: 45rem; /* Maksymalna szerokość karty na większych ekranach */
+    }
+}
+
+.card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+    border-bottom: 1px solid #ccc;
+	padding-bottom: 1rem;
+}
+
+.card-text {
+    margin: 10px 0;
+}
+
+.reservation-section {
+	display: flex;
+	flex-direction: column;
+}
+
+.reservations {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+    justify-items: center; /* Wycentrowanie elementów w poziomie */
+    align-items: start; /* Wycentrowanie elementów w pionie */
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+    }
+}
+
+.delete-button {
+	background-color: var(--error-color);
+	color: #fff;
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background-color 0.3s ease-in-out;
+	&:hover {
+		background-color: #580303
+	}
+}
