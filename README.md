@@ -8,6 +8,17 @@ Stos technologiczny:
 - Node.js (serwer do uruchomienia aplikacji)
 
 ## Jak uruchomić?
+
+1. Sklonuj repozytorium:
+```bash
+git clone https://github.com/PoProstuWitold/pizzeria pizzeria
+```
+
+2. Przejdź do folderu ``pizzeria``
+```bash
+cd pizzeria
+```
+
 ### Node.js
 Z racji, że aplikacja używa dynamicznego importowania komponentów, wymagane jest uruchomienie jej z poziomu serwera. W tym celu należy użyć polecenia ``node server.mjs`` będąc w głównym katalogu projektu. Wymagane jest środowisko **[Node.js](https://nodejs.org/)**. Aplikacja była realizowana pod ten sposób uruchamiania.
 
