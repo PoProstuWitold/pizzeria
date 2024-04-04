@@ -65,7 +65,7 @@ export const loadReservations = () => {
             <p class="card-text"><strong>Klient:</strong> ${reservation.issuer}</p>
             <p class="card-text"><strong>Email:</strong> ${reservation.email}</p>
             <p class="card-text"><strong>Imię i nazwisko:</strong> ${reservation.name}</p>
-            <p class="card-text"><strong>Pesel:</strong> ${reservation.pesel}</p>
+            <p class="card-text"><strong>PESEL:</strong> ${reservation.pesel}</p>
             <p class="card-text"><strong>Liczba gości:</strong> ${reservation.guests}</p>
             <p class="card-text"><strong>Data i godzina:</strong> ${reservation.date}, ${reservation.time}</p>
             <p class="card-text"><strong>Typ:</strong> ${reservation.type}</p>

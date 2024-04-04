@@ -12,14 +12,17 @@ export const MainComponent = () => {
 	const template = /*html*/`
 		<div class="main-container">
 			<div class="main-image">
-				<h1>Pizzeria GitGud</h1>
-				<h2>Szybko, smacznie i tanio!</h2>
+				<img src="../assets/img/pizza-bg.webp" fetchpriority="high" alt="Pizza Background" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="eager">
+				<div style="position: relative;">
+					<h1>Pizzeria GitGud</h1>
+					<h2>Szybko, smacznie i tanio!</h2>
+				</div>
 			</div>
 			<div class="main-content">
 				<div>
 					<h1>Co mówią o nas klienci?</h1>
 					<p>
-					Nam możesz nie ufać, więc posłuchaj co mają do powiedzenia koneserzy pizzy i kuchni włoskiej odwiedzający nasz lokal!
+					Nam możesz nie ufać, więc posłuchaj, co mają do powiedzenia koneserzy pizzy i kuchni włoskiej odwiedzający nasz lokal!
 					</p>
 				</div>
 				<!-- Recenzje -->
@@ -81,12 +84,12 @@ export const MainComponent = () => {
 							Pizzeria GitGud oferuje szeroki wybór pizz, dań kuchni włoskiej, fastfoodów i napojów. 
 							W naszym menu znajdziesz zarówno klasyczne smaki, jak i unikatowe kompozycje stworzone 
 							przez naszych kucharzy. Zapraszamy do odwiedzenia naszego lokalu lub skorzystania 
-							z dostawy na terenie miasta i okolic.
+							z dostawy na terenie Lublina i okolic.
 							</p>
 							<p>
 							Podajemy również alkohole, w tym piwo. 
-							W naszym lokalu znajdują się 3 telewizory i transmitujemy wszystkie mecze
-							naszych reprezentacji narodowych oraz ligi europejskie.
+							W naszym lokalu znajdują się 3 telewizory. Transmitujemy wszystkie mecze
+							naszych reprezentacji narodowych, wszystkie ważniejsze wydarzenia sportowe oraz ligi europejskie.
 							</p>
 							<p>
 							Oferujemy też imprezy okolicznościowe, takie jak urodziny, imieniny, spotkania firmowe, 
@@ -98,7 +101,7 @@ export const MainComponent = () => {
 							</p>
 						</div>
 						<div class="main-offer-image">
-							<img src="assets/img/people.webp" alt="ludzie">
+							<img fetchpriority="high" src="assets/img/people.webp" alt="ludzie">
 						</div>
 					</div>
 				</div>

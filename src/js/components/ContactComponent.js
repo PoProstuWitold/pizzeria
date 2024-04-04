@@ -16,7 +16,7 @@ export const ContactComponent = () => {
 					<h1>Kontakt</h1>
 					<p>
 					Zamówienia przyjmujemy wyłącznie telefonicznie lub bezpośrednio w lokalu. 
-					Najłatwiej skontaktować się na podane poniżej sposoby:
+					Najłatwiej skontaktować się z nami na podane poniżej sposoby:
 					</p>
 					<ul class="contact-ways">
 						<li>email: 
@@ -31,14 +31,15 @@ export const ContactComponent = () => {
 					<h1>Dostawa</h1>
 					<p>
 					Dostawa jest wliczona w cenę dla Lublina i sąsiadujących gmin.
-					Dla każdej innej lokalizacji cena dostawy wynosi 3 złote za każdy dodatkowo przejechany kilometr 
+					Dla każdej innej lokalizacji cena dostawy wynosi 3 złote za każdy dodatkowo przejechany kilometr, 
 					maksymalnie do 30km.
 					</p>
 				</div>
 				<div>
 					<h1>Rezerwacja</h1>
 					<p>
-						Istnieje możliwość rezerwacji całej sali wraz z caterigiem lub pojedycznego stolika na jedną wizytę.
+						Istnieje możliwość rezerwacji całej sali wraz z cateringiem, samej sali 
+						lub pojedycznego stolika.
 						Formularz rezerwacji jest dostępny 
 						<a class="contact-inner-link" href="/rezerwacja">
 						tutaj.

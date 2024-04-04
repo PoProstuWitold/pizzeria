@@ -114,6 +114,11 @@ export const getFormElements = () => {
 				if(!value) return {
 					valid: false
 				}
+
+				if(value.startsWith('0')) return {
+					message: 'Liczba gości nie może zaczynać się od zera',
+					valid: false
+				}
 	
 				if(!value > 0) return {
 					message: 'Liczba gości musi być większa od 0',
@@ -143,7 +148,10 @@ export const getFormElements = () => {
 				const date = new Date(value)
 				const now = new Date()
 	
-				const weekAhead = new Date().setDate(now.getDate() + 7)
+				// Data rezerwacji + 7 dni - 1 dzień (bo dni są indeksowane od 0)
+				const weekAhead = new Date().setDate(now.getDate() + 7 - 1)
+
+				// Data rezerwacji + 3 miesiące
 				const threeMonthsAhead = new Date().setMonth(now.getMonth() + 3)
 	
 				if(!(weekAhead <= date)) return {

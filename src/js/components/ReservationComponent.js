@@ -168,7 +168,7 @@ export const ReservationComponent = () => {
 		<div class="reservation-container">
 			<div>
 				<h1>Zarezerwuj lokal lub stolik</h1>
-				<p>Dokonaj rezerwacji stolika na jedno posiedzenie lub całej sali, nawet na kilka dni!
+				<p>Dokonaj rezerwacji stolika lub całej sali dla siebie i swoich gości!
 				Odpowiadamy na zgłoszenia w ciągu maksymalnie 3 dni roboczych.
 				</p>
 			</div>

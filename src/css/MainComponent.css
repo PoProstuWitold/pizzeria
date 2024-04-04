@@ -5,22 +5,24 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	margin-bottom: 5rem;
 }
 
 .main-image {
+	position: relative;
 	color: white;
-	background-image: url('../assets/img/pizza-bg.webp');
-	background-size: cover;
-	height: 40vh;
+	height: 20vh;
+	width: calc(100vw - 15px);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: calc(100vw - 15px);
-	font-size: 1.5rem;
+	font-size: 1.25rem;
+	text-align: center;
 	-webkit-text-fill-color: white;
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
+
 
 .main-image h2 {
 	font-size: 1.5rem;
@@ -29,6 +31,7 @@
 @media screen and (min-width: 768px) {
 	.main-image {
 		font-size: 3rem;
+		height: 40vh;
 	}
 	
 	.main-image h2 {
@@ -95,7 +98,6 @@
 	margin-top: 10px;
 	font-style: italic;
 	text-align: justify;
-	overflow: hidden;
 }
 
 @media screen and (min-width: 1420px) {
@@ -137,8 +139,8 @@
 }
 
 .main-offer-image img {
-	border-radius: 20px;
-	height: auto;
+	border-radius: 25%;
+	width: auto;
 }
 
 @media screen and (min-width: 1420px) {
@@ -147,12 +149,10 @@
 		align-items: stretch;
 	}
 	.main-offer-text {
-		width: 65%;
+		flex: 1;
   	}
-	.main-offer-image {
-	  	width: 35%;
-	}
 	.main-offer-image img {
-		max-width: 100%;
+		flex: 0;
+		max-height: 20rem;
 	}
 }

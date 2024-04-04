@@ -46,15 +46,13 @@
 
 
 @media screen and (min-width: 768px) {
-	.gallery-item {
-		max-width: 45rem;
-	}
 	.gallery-item img {
 		max-height: 110px;
 	}
 }
 
 dialog {
+	border-radius: 10px;
     position: fixed;
     top: 50%;
     left: 50%;
