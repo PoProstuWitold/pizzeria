@@ -1,5 +1,16 @@
-const PIXABAY_URL = 
-`https://pixabay.com/api/?key=43217952-49b985ba5b4a301637dfa1398&q=pizza&image_type=photo&min_width=350&min_height=200&per_page=10`
+// const PIXABAY_URL = 
+// `https://pixabay.com/api/?key=43217952-49b985ba5b4a301637dfa1398&q=pizza&image_type=photo&min_width=350&min_height=200&per_page=10`
+
+const url = new URL('https://pixabay.com/api/')
+url.searchParams.set('key', '43217952-49b985ba5b4a301637dfa1398')
+url.searchParams.set('q', 'pizza')
+url.searchParams.set('image_type', 'photo')
+url.searchParams.set('min_width', '350')
+url.searchParams.set('min_height', '200')
+url.searchParams.set('per_page', '10')
+
+const PIXABAY_URL = url.href;
+
 
 // Do pobierania obrazków z Pixabay użyłem darmowego API, które pozwala na pobieranie obrazków z ich serwisu
 // https://pixabay.com/api/docs/
