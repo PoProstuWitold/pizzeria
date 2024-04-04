@@ -1,16 +1,37 @@
+/*
+
+Z racji tego, że formularz rezerwacji jest dość rozbudowany
+oraz posiada powtarzalną logikę zdecydowałem się wydzielić
+funkcję getFormElements, która zwraca obiekt zawierający
+elementy formularza wraz z ich walidacją. Dzięki temu
+możemy uniknąć powtarzalnego kodu w komponencie, zgodnie
+z zasadą DRY (Don't Repeat Yourself).
+
+"defaultMessage" - domyślna wiadomość, która wyświetla się w przypadku
+braku wartości. Jest zastępowana przez "message", jeśli logika walidacji
+wymaga czegoś więcej (np. numer PESEL musi mieć 11 cyfr) jest zastępowana
+wiadomością "message".
+
+Jest to funkcja, a nie obiekt, ponieważ elementy formularza są dynamiczne
+i nie istnieją w momencie deklaracji obiektu.
+
+*/
+
 export const getFormElements = () => {
 	const formElements = {
 		email: {
 			input: document.getElementById('email'),
 			box: document.getElementById('emailBox'),
-			error: document.getElementById('emailError'),
+			messageBox: document.getElementById('emailMessageBox'),
 			defaultMessage: 'Podaj adres email',
 			validation: (value) => {
 				if(!value) return {
 					valid: false
 				}
 	
+				// Wyrażenie regularne dla adresu email
 				const emailRegEx = new RegExp(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
+
 				// Maksymalna długość adresu email według Standardu RFC 5321
 				const emailMaxLen = 320
 	
@@ -23,46 +44,56 @@ export const getFormElements = () => {
 		name: {
 			input: document.getElementById('name'),
 			box: document.getElementById('nameBox'),
-			error: document.getElementById('nameError'),
+			messageBox: document.getElementById('nameMessageBox'),
 			defaultMessage: 'Podaj imię i nazwisko',
 			validation: (value) => {
 				if(!value) return {
 					valid: false
 				}
-	
+				
+				// Wyrażenie regularne dla imienia, drugiego imienia i nazwiska
+				// w formie "PierwszeImie DrugieImie(opcjonalnie) Nazwisko"
+				const nameRegEx = new RegExp(/^([a-zA-Z]+) ?([a-zA-Z]*) ([a-zA-Z]+)$/)
+
 				return {
 					message: 'Podaj poprawne imię i nazwisko',
-					valid: value.match(new RegExp(/^([a-zA-Z]+) ?([a-zA-Z]*) ([a-zA-Z]+)$/))
+					valid: value.match(nameRegEx)
 				}
 			}
 		},
 		pesel: {
 			input: document.getElementById('pesel'),
 			box: document.getElementById('peselBox'),
-			error: document.getElementById('peselError'),
+			messageBox: document.getElementById('peselMessageBox'),
 			defaultMessage: 'Podaj numer PESEL',
 			validation: (value) => {
 				if(!value) return {
 					valid: false
 				}
+
+				// Wyrażenie regularne dla numeru PESEL w formie 11 cyfr
+				const peselRegExp = new RegExp(/^[0-9]{11}$/)
 	
 				return {
 					message: 'Podaj poprawny numer PESEL',
-					valid: value.match(new RegExp(/^[0-9]{11}$/))
+					valid: value.match(peselRegExp)
 				}
 			}
 		},
 		code: {
 			input: document.getElementById('code'),
 			box: document.getElementById('codeBox'),
-			error: document.getElementById('codeError'),
+			messageBox: document.getElementById('codeMessageBox'),
 			defaultMessage: 'Podaj nazwę rezerwacji',
 			validation: (value) => {
 				if(!value) return {
 					valid: false
 				}
 	
+				// Wyrażenie regularne dla nazwy rezerwacji w formie,
+				// gdzie pierwszy znak musi być literą alfabetu. Małą lub dużą.
 				const codeRegExp = new RegExp(/^[a-zA-Z]/)
+
 				if(!value.match(codeRegExp)) return {
 					valid: false,
 					message: 'Nazwa rezerwacji musi zaczynać się od litery alfabetu'
@@ -77,7 +108,7 @@ export const getFormElements = () => {
 		guests: {
 			input: document.getElementById('guests'),
 			box: document.getElementById('guestsBox'),
-			error: document.getElementById('guestsError'),
+			messageBox: document.getElementById('guestsMessageBox'),
 			defaultMessage: 'Podaj liczbę gości',
 			validation: (value) => {
 				if(!value) return {
@@ -102,7 +133,7 @@ export const getFormElements = () => {
 		date: {
 			input: document.getElementById('date'),
 			box: document.getElementById('dateBox'),
-			error: document.getElementById('dateError'),
+			messageBox: document.getElementById('dateMessageBox'),
 			defaultMessage: 'Podaj datę rezerwacji',
 			validation: (value) => {
 				if(!value) return {
@@ -133,7 +164,7 @@ export const getFormElements = () => {
 		time: {
 			input: document.getElementById('time'),
 			box: document.getElementById('timeBox'),
-			error: document.getElementById('timeError'),
+			messageBox: document.getElementById('timeMessageBox'),
 			defaultMessage: 'Podaj godzinę rezerwacji',
 			validation: (value) => {
 				if(!value) return {
@@ -159,7 +190,7 @@ export const getFormElements = () => {
 		type: {
 			input: document.getElementById('type'),
 			box: document.getElementById('typeBox'),
-			error: document.getElementById('typeError'),
+			messageBox: document.getElementById('typeMessageBox'),
 			defaultMessage: 'Podaj rodzaj rezerwacji',
 			validation: (value) => {
 				return {
@@ -170,7 +201,7 @@ export const getFormElements = () => {
 		issuer: {
 			input: document.getElementsByName('issuer'),
 			box: document.getElementById('issuerBox'),
-			error: document.getElementById('issuerError'),
+			messageBox: document.getElementById('issuerMessageBox'),
 			defaultMessage: 'Podaj rodzaj podmiotu rezerwującego',
 			validation: (value) => {
 				return {

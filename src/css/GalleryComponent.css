@@ -29,7 +29,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	transition: all 0.3s ease-in-out;
+	transition: background-color 0.3s ease-in-out;
 	width: 100%;
 }
 
@@ -150,11 +150,11 @@ dialog {
 }
 
 #prev-dialog {
-	left: 3rem;
+	left: 1.5rem;
 	transform: translateY(-50%);
 }
 
 #next-dialog {
-	right: 3rem;
+	right: 1.5rem;
 	transform: translateY(-50%);
 }

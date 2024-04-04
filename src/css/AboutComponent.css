@@ -1,6 +1,9 @@
 /* ABOUT COMPONENT */
 
 .about-container {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 	padding: 10px;
 }
 
@@ -8,7 +11,7 @@
 	text-align: justify;
 }
 
-.source-code-linkg {
+.source-code-link {
 	font-weight: bold;
 	color: var(--accent-color);
 	font-style: italic;

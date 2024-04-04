@@ -22,7 +22,7 @@ export const MainComponent = () => {
 					Nam możesz nie ufać, więc posłuchaj co mają do powiedzenia koneserzy pizzy i kuchni włoskiej odwiedzający nasz lokal!
 					</p>
 				</div>
-				<!-- RECENZJE -->
+				<!-- Recenzje -->
 				<div class="main-reviews">
 					<div class="review-box">
 						<div class="rating">

@@ -1,20 +1,23 @@
 /*
 
 Zdecydowałem się użyć prostego SPA.
-Jako system routingu użyłem HistoryAPI, które jest wspierane przez wszystkie przeglądarki.
+Jako podstawę systemu routingu użyłem "History API", które jest wspierane przez wszystkie przeglądarki.
 Daje to możliwość zmiany zawartości strony bez przeładowywania całej strony w elegancki i nowoczesny sposób.
 
 */
 
 class SinglePageApplication {
     constructor(options) {
+        // Przechowuje dostępne trasy (routes) naszej aplikacji
         this.routes = options.routes
-		this.eventListeners = {} // przechowuje referencje do nasłuchiwaczy zdarzeń
 
-        // event polegający na zmianie adresu URL
-        window.addEventListener('popstate', this.render.bind(this))
+		// Przechowuje referencje do nasłuchiwaczy zdarzeń
+		this.eventListeners = {}
 
-        // event polegający na załadowaniu strony
+        // Event polegający na zmianie adresu URL z "History API"
+        window.addEventListener('popstate', () => this.render())
+
+        // Event polegający na załadowaniu strony
         window.addEventListener('DOMContentLoaded', () => {
             this.addLinkClickHandlers()
             this.render()
@@ -24,39 +27,46 @@ class SinglePageApplication {
     }
 
     async render() {
+		// Pobieramy aktualną ścieżkę,
+		// czyli, np. dla strony głównej, będzie to '/'
         let path = location.pathname
         if (path === '') path = '/'
+
+		// Sprawdzamy, czy ścieżka istnieje w naszych zadeklarowanych trasach.
+		// Jeśli nie, to wyświetlamy stronę błędu 404
         const route = this.routes[path]
         if (!route) return this.renderError(404, 'Strona o podanym adresie nie istnieje')
 
 		if (this.eventListeners[path]) {
-			// usuwamy nasłuchiwaczy zdarzeń, które były przypisane do poprzedniego komponentu
+			// Usuwamy nasłuchiwacze zdarzeń, które były przypisane do komponentu
 			// ponieważ w przeciwnym razie zdarzenia będą się kumulować
             this.eventListeners[path].forEach(listener => {
                 document.removeEventListener(listener.event, listener.handler)
             })
         }
 
+		// Importujemy dynamicznie komponenty, renderujemy je i wstawiamy do elementu o id="app"
         const component = await route()
         document.getElementById('app').innerHTML = component.template
 
-        // z racji, że strona jest dynamicznie renderowana, 
+        // Z racji, że strona jest dynamicznie renderowana, 
         // trzeba wywołać funkcję callback, która zapewni działanie eventów, jeśli to potrzebne
         if (component.callback) {
-			// zapisujemy referencje do nasłuchiwaczy zdarzeń, aby móc je usunąć w przyszłości,
+			// Zapisujemy referencje do nasłuchiwaczy zdarzeń, aby móc je usunąć w przyszłości,
 			// żeby się nie kumulowały
 			this.eventListeners[path] = await component.callback()
 		}
     }
 
     async renderError(code = 500, message = 'Wewnętrzny błąd serwera') {
+		// Dynamicznie importujemy komponent błędu i renderujemy go w elemencie o id="app"
 		const errComponent = (await import('./components/ErrorComponent.js')).ErrorComponent(code, message)
         document.getElementById('app').innerHTML = errComponent.template
 		errComponent.callback()
     }
 
 	addLinkClickHandlers() {
-		// powoduje, że po kliknięciu w link będący częścią nawigacji strony,
+		// Powoduje, że po kliknięciu w link będący częścią nawigacji strony,
 		// witryna nie przeładuje się (unikniemy niechcianego efektu "blyskania" strony)
         const links = document.getElementsByClassName('navbtn')
         for (const link of links) {
@@ -70,6 +80,9 @@ class SinglePageApplication {
     }
 }
 
+// definiujemy ścieżki do komponentów, które mają być renderowane
+// dynamicznie importujemy komponenty, aby uniknąć ładowania wszystkich 
+// komponentów jednocześnie, co mogłoby spowolnić działanie strony
 const routes = {
     '/': async () => (await import('./components/MainComponent.js')).MainComponent(),
     '/o-nas': async () => (await import('./components/AboutComponent.js')).AboutComponent(),

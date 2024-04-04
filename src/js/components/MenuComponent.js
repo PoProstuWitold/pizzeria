@@ -6,11 +6,25 @@ export const MenuComponent = () => {
 	const callback = async () => {
 		loadStyles('css/MenuComponent.css')
 
+		// Pobieramy wszystkie elementy z klasą 'collapsible'
 		const coll = document.getElementsByClassName('collapsible')
+
+
 		for (let i = 0; i < coll.length; i++) {
+			// Dodajemy nasłuchiwacz zdarzenia 'click' do każdego elementu
+			// Używamy zwykłej funkcji zamiast strzałkowej, ponieważ w strzałkowej
+			// słowo kluczowe 'this' odnosi się do obiektu, w którym została zdefiniowana
+			// a nie do elementu, który wywołano zdarzenie
 			coll[i].addEventListener('click', function () {
+				// Po kliknięciu, przełączamy klasę 'active' dla danego elementu
 				this.classList.toggle('active')
+
+				// Pobieramy następny element po klikniętym elemencie
 				let content = this.nextElementSibling
+
+				// Jeżeli element 'content' ma ustawioną maksymalną wysokość, usuwamy ją
+				// W przeciwnym wypadku, ustawiamy maksymalną wysokość na wysokość elementu
+				// Dzięki temu, zawartość 'collapsible' elementu jest pokazywana lub ukrywana
 				if (content.style.maxHeight) {
 					content.style.maxHeight = null
 				} else {
@@ -32,7 +46,6 @@ export const MenuComponent = () => {
 				<div>
 					<button class="collapsible">Pizza</button>
 					<div class="collap-content">
-					    <!-- Faktyczna zawartość -->
 						<table class="menu-content">
 							<thead>
 								<tr>

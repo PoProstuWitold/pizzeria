@@ -14,7 +14,8 @@ export const ContactComponent = () => {
 			<div class="contact-section">
 				<div>
 					<h1>Kontakt</h1>
-					<p>Zamówienia przyjmujemy wyłącznie telefonicznie lub bezpośrednio w lokalu. 
+					<p>
+					Zamówienia przyjmujemy wyłącznie telefonicznie lub bezpośrednio w lokalu. 
 					Najłatwiej skontaktować się na podane poniżej sposoby:
 					</p>
 					<ul class="contact-ways">
@@ -28,8 +29,11 @@ export const ContactComponent = () => {
 				</div>
 				<div>
 					<h1>Dostawa</h1>
-					<p>Dostawa jest wliczona w cenę dla Lublina i sąsiadujących gmin.
-					Dla każdej innej lokalizacji cena dostawy wynosi 3 złote za każdy dodatkowo przejechany kilometr maksymalnie do 30km.</p>
+					<p>
+					Dostawa jest wliczona w cenę dla Lublina i sąsiadujących gmin.
+					Dla każdej innej lokalizacji cena dostawy wynosi 3 złote za każdy dodatkowo przejechany kilometr 
+					maksymalnie do 30km.
+					</p>
 				</div>
 				<div>
 					<h1>Rezerwacja</h1>

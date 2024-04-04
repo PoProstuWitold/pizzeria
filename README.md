@@ -21,7 +21,29 @@ docker buildx b -t poprostuwitold/pizzeria .
 docker run -p 3005:3005 --network=host -it poprostuwitold/pizzeria
 ```
 
-W obu przypadkach aplikacja będzie dostępna pod adresem ``localhost:3005`` lub ``TWOJE_IP:3005``.
+W obu przypadkach aplikacja będzie dostępna pod adresem ``localhost:3005`` lub ``TWOJE_IPv4:3005``.
+
+## Struktura projektu
+**`server.mjs`** - Prosty serwer *Node.js* serwujący aplikację na porcie 3005.
+
+**`src`** - Główny katalog. Znajdują się tu foldery: `assets` (obrazki), `css` (arkusze stylów), `js` (pliki JavaScript) oraz plik `index.html`.
+
+**`Dockerfile`** i **`.dockerignore`** - Pliki potrzebne do zbudowania i uruchomienia obrazu dockerowego.
+
+## Dostępne ścieżki:
+**"/"** - Strona startowa aplikacji.
+
+**"/o-nas"** - Informacje o autorze.
+
+**"/menu"** - Menu restauracji.
+
+**"/galeria"** - Dynamicznie generowana galeria z użyciem ***[API serwisu Pixabay](https://pixabay.com/api/docs/)*** przy pomocy ***Fetch API***.
+
+**"/kontakt"** - Informacje kontakowe oraz mapa Google.
+
+**"/rezerwacja"** - Szczegółowo walidowany formularz rezerwacji oraz lista wszystkich rezerwacji użytkownika z możliwością ich edycji oraz usunięcia.
+
+**"/*"** - Każda inna ścieżka jest obsługiwana przez stronę błędu z odpowiednim kodem (np. 404 w przypadku, gdy strona nie istnieje).
 
 ## Disclaimer
-Wszystkie obrazki są na licencji [Pixabay](https://pixabay.com/service/license-summary/), czyli w skrócie dozwolone jest używanie tych obrazków za darmo bez wzmianki autorów, aczkolwiek zabronione jest wykorzystywanie ich w celach komercyjnych.
+Wszystkie obrazki są na licencji ***[Pixabay](https://pixabay.com/service/license-summary/)***, czyli w skrócie dozwolone jest używanie tych obrazków za darmo bez wzmianki autorów, aczkolwiek zabronione jest wykorzystywanie ich w celach komercyjnych.

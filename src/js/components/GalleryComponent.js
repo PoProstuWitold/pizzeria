@@ -9,19 +9,24 @@ export const GalleryComponent = () => {
 
 		const images = await fetchImages()
 		
-		// Przekroczono limit zapytań do API
+		// Przekroczono limit zapytań do API,
+		// więc nie można pobrać zdjęć - wyświetlamy komunikat
 		if(images.length === 0) {
 			console.log('No images found')
 			gallery.innerHTML = '<p>Wystąpił błąd podczas wczytywania zdjęć</p>'
 			return
 		}
 		
+		// Wypełniamy galerię zdjęciami
 		await fillGallery(images)
 		
         const dialog = document.querySelector('#gallery-dialog')
         const galleryItems = Array.from(document.querySelectorAll('.gallery-item'))
         let currentImageIndex = 0
 
+		// Dla każdego elementu galerii,
+		// dodajemy nasłuchiwacz zdarzeń, który otwiera znacznik "dialog"
+		// i wyświetla powiększone zdjęcie
         galleryItems.forEach((item, index) => {
             item.addEventListener('click', () => {
                 currentImageIndex = index
@@ -39,12 +44,11 @@ export const GalleryComponent = () => {
 				<h1>Galeria</h1>
 				<p>Poniżej prezentujemy zdjęcia zrobione przez naszych klientów.</p>
 			</div>
-			<!-- GALERIA -->
 			<div class="gallery">
-				<!-- ZDJECIA -->
+				<!-- Zdjęcia -->
 			</div>
 			<dialog id="gallery-dialog">
-				<!-- POWIEKSZONE ZDJECIE -->
+				<!-- Powiększone zdjęcie -->
 			</dialog>
 		</div>
 	`
