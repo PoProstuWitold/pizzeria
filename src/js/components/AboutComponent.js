@@ -9,7 +9,7 @@ export const AboutComponent = () => {
 	}
 
 	const template = /*html*/`
-		<div class="about-container">
+		<section class="about-container">
 			<h1>O nas</h1>
 			<p>Jesteśmy najlepszą wymyśloną pizzerią w Polsce! Działamy już ponad 20 lat. Serdecznie zapraszamy!</p>
 			<p>
@@ -17,7 +17,7 @@ export const AboutComponent = () => {
 				<a class="source-code-link" href="https://github.com/PoProstuWitold/pizzeria" target="_blank">strony</a>.
 				Stronę zaprojektował i zaprogramował <i>Witold Adam Zawada</i>.
 			</p>
-		</div>
+		</section>
 	`
 
 	return {

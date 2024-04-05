@@ -120,6 +120,16 @@
 	width: auto;
 }
 
+.main-offer-image figcaption {
+	margin-top: 0.25rem;
+	text-align: center;
+	font-weight: bold;
+}
+
+.main-heading {
+	margin-bottom: 1.5rem;
+}
+
 @media screen and (min-width: 1420px) {
 	.main-offer {
 	  	flex-direction: row;

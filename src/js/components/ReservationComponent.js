@@ -166,13 +166,13 @@ export const ReservationComponent = () => {
 
 	const template = /*html*/`
 		<div class="reservation-container">
-			<div>
+			<section>
 				<h1>Zarezerwuj lokal lub stolik</h1>
 				<p>Dokonaj rezerwacji stolika lub całej sali dla siebie i swoich gości!
 				Odpowiadamy na zgłoszenia w ciągu maksymalnie 3 dni roboczych.
 				</p>
-			</div>
-			<div class="reservation-section">
+			</section>
+			<section class="reservation-section">
 				<form id="rezerwacja" method="POST">
 					<h2>Formularz rezerwacji</h2>
 					<!-- Pole tekstowe -->
@@ -252,18 +252,20 @@ export const ReservationComponent = () => {
 						<input type="reset" value="Resetuj">
 					</div>
 				</form>
-			</div>
-			<div>
-				<h1>Twoje rezerwacje</h1>
-				<p>
-				Poniżej masz dostęp do swoich rezerwacji. 
-				Możesz je edytować lub usuwać, używając kolejno nazwy rezerwacji w formularzu
-				lub klikając przycisk po prawo.
-				</p>
-			</div>
-			<div class="reservations">
-				<!-- Karty rezerwacji -->
-			</div>
+			</section>
+			<section>
+				<div>
+					<h1>Twoje rezerwacje</h1>
+					<p>
+					Poniżej masz dostęp do swoich rezerwacji. 
+					Możesz je edytować lub usuwać, używając kolejno nazwy rezerwacji w formularzu
+					lub klikając przycisk po prawo.
+					</p>
+				</div>
+				<div class="reservations">
+					<!-- Karty rezerwacji -->
+				</div>
+			</section>
 		</div>
 	`
 

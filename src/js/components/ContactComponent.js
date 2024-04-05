@@ -10,7 +10,7 @@ export const ContactComponent = () => {
 
 	const template = /*html*/`
 		<div class="contact-container">
-			<div class="contact-section">
+			<section class="contact-section">
 				<div>
 					<h1>Kontakt</h1>
 					<p>
@@ -45,13 +45,13 @@ export const ContactComponent = () => {
 						</a>
 					</p>
 				</div>
-			</div>
-			<div class="contact-localization">
+			</section>
+			<section class="contact-localization">
 				<h1>Nasza lokalizacja</h1>
 				<div class="googlemap">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4996.2618696795!2d22.54422074674113!3d51.23508343701024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4722577729316bd9%3A0x442236391b743bc!2sPolitechnika%20Lubelska%2C%2020-618%20Lublin!5e0!3m2!1spl!2spl!4v1711914147155!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					<iframe title="Nasza lokalizacja na mapie" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4996.2618696795!2d22.54422074674113!3d51.23508343701024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4722577729316bd9%3A0x442236391b743bc!2sPolitechnika%20Lubelska%2C%2020-618%20Lublin!5e0!3m2!1spl!2spl!4v1711914147155!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 				</div>
-			</div>
+			</section>
 		</div>
 	`
 

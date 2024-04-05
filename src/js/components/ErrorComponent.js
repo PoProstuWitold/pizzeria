@@ -9,11 +9,11 @@ export const ErrorComponent = (code, message) => {
 	}
 
 	const template = /*html*/`
-		<div class="error-container">
+		<section class="error-container">
 			<h1 class="error-title">Błąd ${code}</h1>
 			<p class="error-message">${message}</p>
 			<a class="error-button" href="/">Powrót do strony głównej</a>
-		</div>
+		</section>
 	`
 
 	return {

@@ -10,72 +10,75 @@ export const MainComponent = () => {
 
 	const template = /*html*/`
 		<div class="main-container">
-			<div class="main-image">
+			<section class="main-image">
 				<img src="../assets/img/pizza-bg.webp" fetchpriority="high" alt="Pizza Background" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" loading="eager">
 				<div style="position: relative;">
 					<h1>Pizzeria GitGud</h1>
 					<h2>Szybko, smacznie i tanio!</h2>
 				</div>
-			</div>
+			</section>
 			<div class="main-content">
-				<div>
-					<h1>Co mówią o nas klienci?</h1>
-					<p>
-					Nam możesz nie ufać, więc posłuchaj, co mają do powiedzenia koneserzy pizzy i kuchni włoskiej odwiedzający nasz lokal!
-					</p>
-				</div>
 				<!-- Recenzje -->
-				<div class="main-reviews">
-					<div class="review-box">
-						<div class="rating">
-						★★★★★
+				<section>
+					<div class="main-heading">
+						<h1>Co mówią o nas klienci?</h1>
+						<p>
+						Nam możesz nie ufać, więc posłuchaj, co mają do powiedzenia koneserzy pizzy i kuchni włoskiej odwiedzający nasz lokal!
+						</p>
+					</div>
+					<div class="main-reviews">
+						<div class="review-box">
+							<div class="rating">
+							★★★★★
+							</div>
+							<div class="review-text">
+							"Super pizza i wspaniała obsługa! Przychodzę regularnie z rodziną i zawsze jesteśmy zadowoleni."
+							</div>
+							<div class="reviewer-name">
+							Maria, 25 marca 2024
+							</div>
 						</div>
-						<div class="review-text">
-						"Super pizza i wspaniała obsługa! Przychodzę regularnie z rodziną i zawsze jesteśmy zadowoleni."
+						<div class="review-box">
+							<div class="rating">
+							★★★★★
+							</div>
+							<div class="review-text">
+							"Najlepsza pizzeria w mieście! Jest kilka telewizorów, więc na mecz też można wpaść"
+							</div>
+							<div class="reviewer-name">
+							Dawid, 17 marca 2024
+							</div>
 						</div>
-						<div class="reviewer-name">
-						Maria, 25 marca 2024
+						<div class="review-box">
+							<div class="rating">
+							★★★★★
+							</div>
+							<div class="review-text">
+							"Zdecydowanie polecam! Pizza zawsze świeża i pyszna. Moje dzieci i żona zadowoleni"
+							</div>
+							<div class="reviewer-name">
+							Zbigniew, 15 marca 2024
+							</div>
+						</div>
+						<div class="review-box">
+							<div class="rating">
+							★★★★☆
+							</div>
+							<div class="review-text">
+							"Pizza zawsze na czas i gorąca. Sosy mogłyby być większe, ale i tak polecam"
+							</div>
+							<div class="reviewer-name">
+							Ania, 12 marca 2024
+							</div>
 						</div>
 					</div>
-					<div class="review-box">
-						<div class="rating">
-						★★★★★
-						</div>
-						<div class="review-text">
-						"Najlepsza pizzeria w mieście! Jest kilka telewizorów, więc na mecz też można wpaść"
-						</div>
-						<div class="reviewer-name">
-						Dawid, 17 marca 2024
-						</div>
+					<!-- Opinie Pollub WEiE na Google -->
+					<div class="main-more-reviews">
+						<a href="https://g.co/kgs/hCE7x7P" target="_blank" class="review-link">Zobacz wszystkie opinie →</a>
 					</div>
-					<div class="review-box">
-						<div class="rating">
-						★★★★★
-						</div>
-						<div class="review-text">
-						"Zdecydowanie polecam! Pizza zawsze świeża i pyszna. Moje dzieci i żona zadowoleni"
-						</div>
-						<div class="reviewer-name">
-						Zbigniew, 15 marca 2024
-						</div>
-					</div>
-					<div class="review-box">
-						<div class="rating">
-						★★★★☆
-						</div>
-						<div class="review-text">
-						"Pizza zawsze na czas i gorąca. Sosy mogłyby być większe, ale i tak polecam"
-						</div>
-						<div class="reviewer-name">
-						Ania, 12 marca 2024
-						</div>
-					</div>
-				</div>
-				<!-- Opinie Pollub WEiE na Google -->
-				<div class="main-more-reviews">
-					<a href="https://g.co/kgs/hCE7x7P" target="_blank" class="review-link">Zobacz wszystkie opinie →</a>
-				</div>
-				<div>
+				</section>
+				<!-- Oferta -->
+				<section>
 					<h1>Co oferujemy?</h1>
 					<div class="main-offer">
 						<div class="main-offer-text">
@@ -99,11 +102,12 @@ export const MainComponent = () => {
 							zespołem, galerią oraz informacjami kontaktowymi. Zapraszamy!
 							</p>
 						</div>
-						<div class="main-offer-image">
+						<figure class="main-offer-image">
 							<img fetchpriority="high" src="assets/img/people.webp" alt="ludzie">
-						</div>
+							<figcaption>Zespół "Git Gud"</figcaption>
+						</figure>
 					</div>
-				</div>
+				</section>
 			</div>
 		</div>
 	`

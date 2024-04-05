@@ -37,14 +37,14 @@ export const MenuComponent = () => {
 
 	const template = /*html*/ `
 		<div class="menu-container">
-			<div>
+			<section>
 				<h1>Menu</h1>
 				<p>Nasz lokal oferuje szeroki wybór dań kuchni włoskiej jak i fastfoodowej. 
 				Gwarantujemy, że każdy znajdzie u nas coś dla siebie!</p>
-			</div>
-			<div class="menu-section">
+			</section>
+			<section class="menu-section">
 				<div>
-					<button class="collapsible">Pizza</button>
+					<h2 class="collapsible">Pizza</h2>
 					<div class="collap-content">
 						<table class="menu-content">
 							<thead>
@@ -168,10 +168,10 @@ export const MenuComponent = () => {
 						</table>
 					</div>
 				</div>
-			</div>
-			<div class="menu-section">
+			</section>
+			<section class="menu-section">
 				<div>
-					<button class="collapsible">Kuchnia włoska</button>
+					<h2 class="collapsible">Kuchnia włoska</h2>
 					<div class="collap-content">
 						<table class="menu-content">
 							<thead>
@@ -220,10 +220,10 @@ export const MenuComponent = () => {
 						</table>
 					</div>
 				</div>
-			</div>
-			<div class="menu-section">
+			</section>
+			<section class="menu-section">
 				<div>
-					<button class="collapsible">Fastfood</button>
+					<h2 class="collapsible">Fastfood</h2>
 					<div class="collap-content">
 						<table class="menu-content">
 							<thead>
@@ -273,10 +273,10 @@ export const MenuComponent = () => {
 						</table>
 					</div>
 				</div>
-			</div>
-			<div class="menu-section">
+			</section>
+			<section class="menu-section">
 				<div>
-					<button class="collapsible">Napoje (500ml)</button>
+					<h2 class="collapsible">Napoje (500ml)</h2>
 					<div class="collap-content">
 						<table class="menu-content">
 							<thead>
@@ -326,10 +326,10 @@ export const MenuComponent = () => {
 						</table>
 					</div>
 				</div>
-			</div>
-			<div class="menu-section">
+			</section>
+			<section class="menu-section">
 				<div>
-					<button class="collapsible">Napoje alkoholowe</button>
+					<h2 class="collapsible">Napoje alkoholowe</h2>
 					<div class="collap-content">
 						<table class="menu-content">
 							<thead>
@@ -355,7 +355,7 @@ export const MenuComponent = () => {
 						</table>
 					</div>
 				</div>
-			</div>
+			</section>
 		</div>
 	`
 

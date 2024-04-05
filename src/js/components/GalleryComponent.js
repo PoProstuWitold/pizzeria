@@ -31,7 +31,7 @@ export const GalleryComponent = () => {
 	}
 
 	const template = /*html*/`
-		<div class="gallery-container">
+		<section class="gallery-container">
 			<div>
 				<h1>Galeria</h1>
 				<p>Poniżej prezentujemy zdjęcia zrobione przez naszych klientów.</p>
@@ -42,7 +42,7 @@ export const GalleryComponent = () => {
 			<dialog id="gallery-dialog">
 				<!-- Powiększone zdjęcie -->
 			</dialog>
-		</div>
+		</section>
 	`
 
 	return {
