@@ -1,11 +1,10 @@
-import { loadStyles } from '../utils.js'
+import { loadStyles } from '../helpers/utils.js'
 
 export const AboutComponent = () => {
 	document.title = 'O nas'
 
+	const styles = async () => loadStyles('css/AboutComponent.css')
 	const callback = async () => {
-		loadStyles('css/AboutComponent.css')
-
 		console.log(`AboutComponent callback has been called`)
 	}
 
@@ -23,6 +22,7 @@ export const AboutComponent = () => {
 
 	return {
 		template,
-		callback
+		callback,
+		styles
 	}
 }

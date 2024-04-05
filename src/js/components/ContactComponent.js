@@ -1,16 +1,15 @@
-import { loadStyles } from '../utils.js'
+import { loadStyles } from '../helpers/utils.js'
 
 export const ContactComponent = () => {
 	document.title = 'Kontakt'
 
+	const styles = async () => loadStyles('css/ContactComponent.css')
 	const callback = async () => {
-		loadStyles('css/ContactComponent.css')
-		
 		console.log(`ContactComponent callback has been called`)
 	}
 
 	const template = /*html*/`
-		<div class="contact-info">
+		<div class="contact-container">
 			<div class="contact-section">
 				<div>
 					<h1>Kontakt</h1>
@@ -58,6 +57,7 @@ export const ContactComponent = () => {
 
 	return {
 		template,
-		callback
+		callback,
+		styles
 	}
 }

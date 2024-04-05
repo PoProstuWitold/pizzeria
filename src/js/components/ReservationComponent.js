@@ -1,13 +1,13 @@
-import { loadStyles } from '../utils.js'
-import { getFormElements } from '../formElements.js'
-import { loadReservations, reservationExists, saveReservation } from '../reservations.js'
+import { loadStyles } from '../helpers/utils.js'
+
+import { getFormElements } from '../helpers/formElements.js'
+import { Reservations } from '../helpers/reservations.js'
 
 export const ReservationComponent = () => {
 	document.title = 'Rezerwacja'
 
+	const styles = async () => loadStyles('css/ReservationComponent.css')
 	const callback = async () => {
-		loadStyles('css/ReservationComponent.css')
-
 		// POLA FORMULARZA
 		// Funkcja, a nie obiekt, ponieważ elementy formularza są dynamiczne
 		const formElements = getFormElements()
@@ -83,15 +83,15 @@ export const ReservationComponent = () => {
 			formElements.code.messageBox.textContent = ''
 			
 			// Informujemy użytkownika o tym, czy rezerwacja została dodana czy zaktualizowana
-			reservationExists(data.code) 
+			Reservations.find(data.code) 
 				? alert(`Rezerwacja "${data.code}" została zaktualizowana`) 
 				: alert(`Rezerwacja "${data.code}" została dodana`)
 
 			// Zapisujemy nową lub zaktualizowaną rezerwację
-			saveReservation(data)
+			Reservations.save(data)
 
 			// Wczytujemy wszystkie rezerwacje
-			loadReservations()
+			Reservations.load()
 		}
 
 		
@@ -117,7 +117,7 @@ export const ReservationComponent = () => {
 			const code = e.target.value
 
 			// Sprawdzamy, czy rezerwacja o podanej nazwie już istnieje
-			const doesExist = reservationExists(code)
+			const doesExist = Reservations.find(code)
 			if(doesExist) {
 				// Jeśli tak, dodajemy klasę informacyjną 
 				// i wyświetlamy komunikat o edycji rezerwacji
@@ -141,7 +141,7 @@ export const ReservationComponent = () => {
 		form.addEventListener('submit', handleSubmit)
 
 		// Wczytujemy rezerwacje z localStorage na starcie komponentu
-		loadReservations()
+		Reservations.load()
 
 		console.log(`ReservationComponent callback has been called`)
 
@@ -269,6 +269,7 @@ export const ReservationComponent = () => {
 
 	return {
 		template,
-		callback
+		callback,
+		styles
 	}
 }

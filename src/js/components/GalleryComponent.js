@@ -1,24 +1,16 @@
-import { loadStyles } from '../utils.js'
-import { fetchImages, fillGallery, updateDialog } from '../gallery.js'
+import { loadStyles } from '../helpers/utils.js'
+
+import { Gallery } from '../helpers/gallery.js'
 
 export const GalleryComponent = () => {
 	document.title = 'Galeria'
 
+	const styles = async () => loadStyles('css/GalleryComponent.css')
 	const callback = async () => {
-		loadStyles('css/GalleryComponent.css')
-
-		const images = await fetchImages()
-		
-		// Przekroczono limit zapytań do API,
-		// więc nie można pobrać zdjęć - wyświetlamy komunikat
-		if(images.length === 0) {
-			console.log('No images found')
-			gallery.innerHTML = '<p>Wystąpił błąd podczas wczytywania zdjęć</p>'
-			return
-		}
-		
+		const images = await Gallery.fetchImages()
+				
 		// Wypełniamy galerię zdjęciami
-		await fillGallery(images)
+		Gallery.fill(images)
 		
         const dialog = document.querySelector('#gallery-dialog')
         const galleryItems = Array.from(document.querySelectorAll('.gallery-item'))
@@ -30,7 +22,7 @@ export const GalleryComponent = () => {
         galleryItems.forEach((item, index) => {
             item.addEventListener('click', () => {
                 currentImageIndex = index
-                updateDialog(dialog, galleryItems, currentImageIndex, images)
+                Gallery.updateDialog(dialog, galleryItems, currentImageIndex, images)
                 dialog.showModal()
             })
         })
@@ -44,7 +36,7 @@ export const GalleryComponent = () => {
 				<h1>Galeria</h1>
 				<p>Poniżej prezentujemy zdjęcia zrobione przez naszych klientów.</p>
 			</div>
-			<div class="gallery">
+			<div class="gallery-images">
 				<!-- Zdjęcia -->
 			</div>
 			<dialog id="gallery-dialog">
@@ -55,6 +47,7 @@ export const GalleryComponent = () => {
 
 	return {
 		template,
-		callback
+		callback,
+		styles
 	}
 }

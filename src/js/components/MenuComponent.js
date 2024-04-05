@@ -1,11 +1,10 @@
-import { loadStyles } from '../utils.js'
+import { loadStyles } from '../helpers/utils.js'
 
 export const MenuComponent = () => {
 	document.title = 'Nasze menu'
 
+	const styles = async () => loadStyles('css/MenuComponent.css')
 	const callback = async () => {
-		loadStyles('css/MenuComponent.css')
-
 		// Pobieramy wszystkie elementy z klasą 'collapsible'
 		const coll = document.getElementsByClassName('collapsible')
 
@@ -362,6 +361,7 @@ export const MenuComponent = () => {
 
 	return {
 		template,
-		callback
+		callback,
+		styles
 	}
 }

@@ -4,19 +4,13 @@
 	padding: 10px;
 }
 
-.gallery {
+.gallery-images {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 2rem;
 	margin: 2rem 0;
 	justify-items: center;
 	align-items: start;
-}
-
-@media screen and (min-width: 768px) {
-	.gallery {
-		grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-	}
 }
 
 .gallery-item {
@@ -44,13 +38,6 @@
 	border-radius: 5px;
 }
 
-
-@media screen and (min-width: 768px) {
-	.gallery-item img {
-		max-height: 110px;
-	}
-}
-
 dialog {
 	border-radius: 10px;
     position: fixed;
@@ -58,12 +45,6 @@ dialog {
     left: 50%;
     transform: translate(-50%, -50%);
 	width: 95%;
-}
-
-@media screen and (min-width: 768px) {
-	dialog {
-		width: 50%;
-	}
 }
 
 #close-dialog {
@@ -135,11 +116,22 @@ dialog {
 }
 
 @media screen and (min-width: 768px) {
+	dialog {
+		width: 50%;
+	}
+
 	.dialog-img {
 		height: 20rem;
 	}
-}
 
+	.gallery-images {
+		grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+	}
+
+	.gallery-item img {
+		max-height: 110px;
+	}
+}
 
 @media screen and (min-width: 1024px) {
 	.dialog-img {
