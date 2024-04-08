@@ -32,6 +32,7 @@ const server = createServer((req, res) => {
 		'.ico': 'image/x-icon',
 		'.json': 'application/json',
 		'.png': 'image/png',
+		'.webp': 'image/webp'
     }
 
 	// Pobieramy typ MIME dla danego pliku, lub domyślnie 'application/octet-stream'
