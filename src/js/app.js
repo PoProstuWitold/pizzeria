@@ -63,6 +63,8 @@ class SinglePageApplication {
 				this.eventListeners[path] = await component.callback()
 			}
 		} catch (err) {
+			// W przypadku błędu, wyświetlamy błąd w konsoli
+			// oraz renderujemy stronę błędu
 			console.error(err)
 			throw this.renderError(err.code, err.message)
 		}
