@@ -74,11 +74,21 @@
 }
 
 .menu-content th:nth-child(1) {
-    width: 80%;
+    width: 60%;
 }
 
 .menu-content th:nth-child(2), .menu-content th:nth-child(3) {
-    width: 10%;
+    width: 20%;
+}
+
+@media screen and (min-width: 1100px) {
+	.menu-content th:nth-child(1) {
+		width: 80%;
+	}
+	
+	.menu-content th:nth-child(2), .menu-content th:nth-child(3) {
+		width: 10%;
+	}
 }
 
 .menu-content th {

@@ -215,6 +215,12 @@ export const ReservationComponent = () => {
 					</div>
 					<div id="guestsBox" class="input-group1">
 						<label for="guests">Ilość osób:</label>
+						<!-- 
+						onkeypress sprawdza czy kod ASCII znaku jest liczbą 
+						w połączeniu z atrybutem type="number" blokuje wprowadzanie innych znaków
+						niż cyfry, a atrybut step="1" pozwala na zwiększanie i zmniejszanie wartości o 1
+						wszystko jest też walidowane osobno w funkcji walidującej
+						-->
 						<input type="number" id="guests" name="guests" min="1" step="1"
 						onkeypress="return event.charCode >= 48">
 						<div class="error-message" id="guestsMessageBox"></div>

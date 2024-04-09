@@ -115,6 +115,10 @@
 	text-align: justify;
 }
 
+.main-offer-image {
+	max-width: 25rem;
+}
+
 .main-offer-image img {
 	border-radius: 25%;
 	width: auto;

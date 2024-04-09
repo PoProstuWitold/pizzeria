@@ -115,18 +115,24 @@ export const getFormElements = () => {
 					valid: false
 				}
 
-				if(value.startsWith('0')) return {
+				if(value.startsWith('0') && value.length >= 2) return {
 					message: 'Liczba gości nie może zaczynać się od zera',
 					valid: false
 				}
 	
-				if(!value > 0) return {
+				if(value <= 0) return {
 					message: 'Liczba gości musi być większa od 0',
 					valid: false
 				}
 	
 				if(value > 40) return {
 					message: 'Maksymalna liczba gości to 40 osób',
+					valid: false
+				}
+
+				// Sprawdzamy, czy wartość jest liczbą całkowitą
+				if(!Number.isInteger(parseFloat(value))) return {
+					message: 'Liczba gości musi być liczbą całkowitą',
 					valid: false
 				}
 	
@@ -186,7 +192,7 @@ export const getFormElements = () => {
 				if(time < 1200 || time >= 2001) {
 					return {
 						valid: false,
-						message: 'Godzina rezerwacji musi być między 12, a 20'
+						message: 'Godzina rezerwacji musi być między 12:00, a 20:00'
 					}
 				}
 	
