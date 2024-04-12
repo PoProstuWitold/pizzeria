@@ -183,3 +183,19 @@ input[type="reset"]:hover {
 .delete-button:hover {
 	background-color: #580303;
 }
+
+#fill-button {
+	padding: 0.5rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	border-radius: 10px;
+	width: 100%;
+	background-color: var(--info-color);
+	color: #fff;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out;
+}
+
+#fill-button:hover {
+	background-color: #1b70b5;
+}

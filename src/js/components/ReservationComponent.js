@@ -82,6 +82,9 @@ export const ReservationComponent = () => {
 			formElements.code.messageBox.classList.remove('info-message')
 			formElements.code.messageBox.textContent = ''
 			
+			// Usuwamy przycisk do wypełnienia formularza danymi rezerwacji, jeśli istnieje
+			document.getElementById('fill-button')?.remove()
+
 			// Informujemy użytkownika o tym, czy rezerwacja została dodana czy zaktualizowana
 			Reservations.find(data.code) 
 				? alert(`Rezerwacja "${data.code}" została zaktualizowana`) 
@@ -109,28 +112,82 @@ export const ReservationComponent = () => {
 			// w celu odróżnienia edycji od dodawania rezerwacji
 			formElements.code.box.classList.remove('info')
 			formElements.code.messageBox.classList.remove('info-message')
+
+			// Usuwamy przycisk do wypełnienia formularza danymi rezerwacji, jeśli istnieje
+			document.getElementById('fill-button')?.remove()
 		}
 
 		// Obsługa zdarzenia focusout, czyli gdy element traci focus,
 		// czyli np. gdy użytkownik kliknie w inne miejsce na stronie
 		const handleFocusLost = (e) => {
 			const code = e.target.value
-
+		
 			// Sprawdzamy, czy rezerwacja o podanej nazwie już istnieje
-			const doesExist = Reservations.find(code)
-			if(doesExist) {
+			const reservation = Reservations.loadOne(code)
+			if(reservation) {
 				// Jeśli tak, dodajemy klasę informacyjną 
 				// i wyświetlamy komunikat o edycji rezerwacji
 				formElements.code.box.classList.add('info')
 				formElements.code.messageBox.classList.add('info-message')
 				formElements.code.messageBox.textContent = 'Edytujesz rezerwację o podanej nazwie'
+		
+				// Dodajemy przycisk do wypełnienia formularza danymi rezerwacji
+				// Jeśli przycisk już istnieje, nie dodajemy go ponownie
+				// i kończymy działanie funkcji
+				if(document.getElementById('fill-button')) return
+
+				const fillButton = document.createElement('button')
+				fillButton.id = 'fill-button'
+				fillButton.textContent = 'Wypełnij formularz obecnymi danymi'
+
+				// Nasłuchujemy zdarzenia kliknięcia na przycisk
+				fillButton.addEventListener('click', (event) => {
+					event.preventDefault()
+		
+					// Wypełniamy formularz danymi rezerwacji
+					for (const key in formElements) {
+						const element = formElements[key]
+						element.box.classList.remove('error')
+						
+						// Usuwamy komunikaty o błędach, jeśli pole nie jest polem kodu i nie ma klasy informacyjnej
+						if(element.input.name !== 'code' && !element.messageBox.classList.contains('info-message')) {
+							element.messageBox.textContent = ''
+						}
+
+						// Wypełniamy pole wartością z rezerwacji
+						if (reservation[key] && formElements[key].input.type) {
+							formElements[key].input.value = reservation[key]
+						} else {
+							// Jeśli w instukcji warunkowej powyżej wyjdzie "false" ("input.type" nie istnieje, bo to NodeLista),
+							// znaczy to, że to pole typu radio
+							const radioInputs = Array.from(formElements[key].input)
+
+							// Sprawdzamy, który radio input ma wartość z rezerwacji
+							for(let i = 0; i < radioInputs.length; i++) {
+								if(radioInputs[i].value === reservation[key]) {
+									radioInputs[i].checked = true
+								}
+							}
+						}
+					}
+					
+					// Wypełniamy pole "Zgoda na użycie zdjęć w celach promocyjnych"
+					// jeśli rezerwacja ma taką zgodę ustawioną
+					if(reservation.promoConsent) {
+						document.getElementById('promoConsent').checked = true
+					}
+				})
+
+				// Dodajemy przycisk do formularza
+				formElements.code.box.appendChild(fillButton)
 			} else {
-				// W przeciwnym razie usuwamy klasy i komunikaty informacyjne
+				// W przeciwnym razie usuwamy klasy, komunikaty informacyjne oraz przycisk
 				formElements.code.box.classList.remove('info')
 				formElements.code.messageBox.classList.remove('info-message')
 				formElements.code.messageBox.textContent = ''
+				document.getElementById('fill-button')?.remove()
 			}
-		}
+		}		
 
 		// Dodajemy "handleFocusLost" tylko do pola "code",
 		// ponieważ tylko to pole korzysta z tej funkcji
