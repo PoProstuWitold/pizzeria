@@ -2,24 +2,27 @@ export const randomReviews = (reviewContainer) => {
 	// Poprzednia data, jeśli jakaś recenzja już istnieje
     let previousDate
 
+    // Tworzymy kopię tablicy reviews
+    let reviewsCopy = [...reviews]
+
     for(let i = 0; i < 4; i++) {
         // Losujemy ocenę od 1 do 5
         let randomRating = Math.floor(Math.random() * 5) + 1
 
         // Wybieramy recenzje z taką samą oceną
-        let reviewIndex = reviews.findIndex(review => review.rating === randomRating)
+        let reviewIndex = reviewsCopy.findIndex(review => review.rating === randomRating)
 
         // Jeśli nie ma recenzji z taką oceną, losujemy kolejną ocenę
         while (reviewIndex === -1) {
             randomRating = Math.floor(Math.random() * 5) + 1;
-            reviewIndex = reviews.findIndex(review => review.rating === randomRating)
+            reviewIndex = reviewsCopy.findIndex(review => review.rating === randomRating)
         }
 
-        // Pobieramy recenzję i usuwamy ją z tablicy
-        const review = reviews.splice(reviewIndex, 1)[0]
+        // Pobieramy recenzję i usuwamy ją z kopii tablicy
+        const review = reviewsCopy.splice(reviewIndex, 1)[0]
 
         // Generujemy losową datę między wczoraj a 12 marca
-		const oneDay = 24*60*60*1000
+        const oneDay = 24*60*60*1000
         let date = randomDate(new Date(2024, 2, 12), new Date(Date.now() - oneDay))
 
         // Jeśli to nie jest pierwsza recenzja, to generujemy datę późniejszą od poprzedniej
@@ -48,6 +51,7 @@ export const randomReviews = (reviewContainer) => {
         reviewContainer.appendChild(reviewBox)
     }
 }
+
 
 // Funkcja do generowania losowej daty między dwoma datami
 function randomDate(start, end) {
