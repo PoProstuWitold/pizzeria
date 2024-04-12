@@ -1,7 +1,10 @@
-// const PIXABAY_URL = 
-// `https://pixabay.com/api/?key=43217952-49b985ba5b4a301637dfa1398&q=pizza&image_type=photo&min_width=350&min_height=200&per_page=10`
+// Do pobierania obrazków z Pixabay użyłem darmowego API, które pozwala na pobieranie obrazków z ich serwisu
+// https://pixabay.com/api/docs/
 
+// Tworzymy nowy obiekt URL, który pozwala na łatwe zarządzanie parametrami URL
 const url = new URL('https://pixabay.com/api/')
+
+// Ustawiamy parametry URL
 url.searchParams.set('key', '43217952-49b985ba5b4a301637dfa1398')
 url.searchParams.set('q', 'pizza')
 url.searchParams.set('image_type', 'photo')
@@ -9,12 +12,8 @@ url.searchParams.set('min_width', '350')
 url.searchParams.set('min_height', '200')
 url.searchParams.set('per_page', '20')
 
-const PIXABAY_URL = url.href
-
-
-// Do pobierania obrazków z Pixabay użyłem darmowego API, które pozwala na pobieranie obrazków z ich serwisu
-// https://pixabay.com/api/docs/
-
+// Tworzymy nowy obiekt błędu, który dziedziczy po klasie Error
+// w celu dodania statusu błędu, który będzie zwracany w odpowiedzi
 class CustomError extends Error {
     constructor(code, message) {
         super(message)
@@ -23,18 +22,22 @@ class CustomError extends Error {
 }
 
 export class Gallery {
-	url = PIXABAY_URL
+	static pixabayUrl = url.href
 	static async fetchImages() {
 		// Asynchroniczne pobranie obrazków z Pixabay, a następnie ich zwracanie
 		try {
-			const response = await fetch(url)
+			const response = await fetch(this.pixabayUrl)
 			const data = await response.json()
 			return data.hits
 		} catch (err) {
 			console.error(err)
-			// W przypadku błędu, wyświetlamy stosowny komunikat
-			// Dla użytkownika nie ma znaczenia, czy błąd pochodzi z API czy z naszej aplikacji
-			// więc nie ma sensu wyświetlać mu dokładnej treści błędu
+			/* 
+			W przypadku błędu, wyświetlamy stosowny komunikat.
+			Dla użytkownika nie ma znaczenia, czy błąd pochodzi z API czy z naszej aplikacji
+			więc nie ma sensu wyświetlać mu dokładnej treści błędu
+			*/
+
+			// Błąd jest później wyłapywany w bloku try-catch w metodzie "render" w pliku "app.js"
 			throw new CustomError(
 				400, `Nie udało się wczytać zdjęć. Sprawdź swoje połączenie z Internetem lub logi w konsoli.`
 			)

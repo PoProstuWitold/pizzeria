@@ -7,12 +7,18 @@ export const GalleryComponent = () => {
 
 	const styles = async () => loadStyles('css/GalleryComponent.css')
 	const callback = async () => {
+		// Pobieramy obrazki z API Pixabay.
+		// Ewentualne błędy są wyłapywane w bloku try-catch w metodzie "fetchImages" w pliku "gallery.js
+		// a następnie w bloku try-catch w metodzie "render" w pliku "app.js"
 		const images = await Gallery.fetchImages()
 				
 		// Wypełniamy galerię zdjęciami
 		Gallery.fill(images)
 		
         const dialog = document.querySelector('#gallery-dialog')
+
+		// galleryItems to nie tablica, lecz NodeList, więc konwertujemy go na tablicę
+		// w celu użycia metody forEach
         const galleryItems = Array.from(document.querySelectorAll('.gallery-item'))
         let currentImageIndex = 0
 

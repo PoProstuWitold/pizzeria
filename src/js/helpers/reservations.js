@@ -3,6 +3,7 @@ export class Reservations {
 		// Pobieramy aktualną listę rezerwacji z localStorage
 		let reservations = JSON.parse(localStorage.getItem('reservations')) || []
 	
+		// Pole "code" to user-friendly unikalny identyfikator rezerwacji
 		// Sprawdzamy, czy rezerwacja o tym samym "code" już istnieje
 		const index = reservations.findIndex(res => res.code === reservation.code)
 	
@@ -25,6 +26,14 @@ export class Reservations {
 		// Sprawdzamy, czy rezerwacja o podanym kodzie już istnieje
 		return reservations.findIndex(reservation => reservation.code === code) !== -1
 	
+	}
+
+	static loadOne(code) {
+		// Pobieramy aktualną listę rezerwacji z localStorage
+		let reservations = JSON.parse(localStorage.getItem('reservations')) || []
+	
+		// Pobieramy rezerwację o podanym kodzie
+		return reservations.find(reservation => reservation.code === code)
 	}
 
 	static delete(code) {

@@ -73,20 +73,33 @@ class SinglePageApplication {
     async renderError(code = 500, message = 'Wewnętrzny błąd serwera') {
 		// Dynamicznie importujemy komponent błędu i renderujemy go w elemencie o id="app"
 		const errComponent = (await import('./components/ErrorComponent.js')).ErrorComponent(code, message)
+		
+		// Ładujemy style komponentu
 		await errComponent.styles()
+		
+		// Wstawiamy szablon komponentu do elementu o id="app"
         document.getElementById('app').innerHTML = errComponent.template
+
+		// Odpalamy callback komponentu błędu
 		await errComponent.callback()
     }
 
 	addLinkClickHandlers() {
 		// Powoduje, że po kliknięciu w link będący częścią nawigacji strony,
-		// witryna nie przeładuje się (unikniemy niechcianego efektu "blyskania" strony)
+		// Witryna nie przeładuje się (unikniemy niechcianego efektu "błyskania" strony)
         const links = document.getElementsByClassName('navbtn')
         for (const link of links) {
             link.addEventListener('click', (event) => {
+				// Zapobiegamy domyślnej akcji przeglądarki na kliknięcie (przejście do linku)
                 event.preventDefault()
+
+				// Pobieramy atrybut 'href' z linku
                 const href = link.getAttribute('href')
+
+				// Aktualizujemy historię przeglądarki bez przeładowania strony
                 history.pushState(null, '', href)
+
+				// Wywołujemy metodę "render", która aktualizuje widok strony
                 this.render()
             })
         }

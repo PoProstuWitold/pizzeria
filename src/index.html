@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="pl">
 	<head>
+		<!-- Ustawienie kodowania na UTF-8 -->
 		<meta charset="UTF-8">
+		<!-- Ustawienie widoku dla urządzeń mobilnych -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Opis strony dla wyszukiwarek i robotów indeksujących strony -->
 		<meta name="description" content="GitGud Pizza zaprasza na pyszną pizzę każdego dnia! Szybko, smacznie i tanio!">
+		<!-- Ikona strony -->
 		<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
 		<link rel="stylesheet" href="css/main.css">
 		<title>GitGud Pizza</title>
 	</head>
 	<body>
+		<!-- Nagłówek strony -->
 		<header class="header">
 			<p class="banner">
 				Pon-Czw: 12:00-22:00, Pt-Ndz: 10:00-24:00
 			</p>
+			<!-- Nawigacja desktopowa -->
 			<nav class="navigation">
 				<a class="logo navbtn" href="/">
 					<img src="assets/img/logo.webp" alt="Pizzeria">
 					<span>GitGud Pizza</span>
 				</a>
-				<!-- DESKTOP MENU -->
+				<!-- Menu na desktopach/większych wyświetlaczach -->
 				<ul class="desktop-menu">
 					<li><a class="navbtn" href="/o-nas">O nas</a></li>
 					<li><a class="navbtn" href="/menu">Menu</a></li>
@@ -26,15 +32,16 @@
 					<li><a class="navbtn" href="/kontakt">Kontakt</a></li>
 					<li><a class="navbtn" href="/rezerwacja">Rezerwacja</a></li>
 				</ul>
-				<!-- MOBILE MENU BUTTON -->
+				<!-- Przycisk do otwierania mobilnego menu -->
 				<button type="button" title="mobile menu button" class="mobile-menu-button" id="mobile-menu">
-					<!-- MOBILE MENU "BURGER" ICON -->
+					<!-- Ikonka do otwierania i zamykania menu mobilnego, tzw. "burger icon" -->
 					<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
 					</svg>
 				</button>
 			</nav>
-			<!-- MOBILE MENU -->
+			<!-- Menu na telefonach/mniejszych wyświetlaczach -->
+			<!-- Nawigacja mobilna -->
 			<nav class="mobile-menu-trigger hidden" id="mobile-menu-items">
 				<ul class="mobile-menu"> 
 					<li><a class="navbtn" href="/o-nas">O nas</a></li>
@@ -45,13 +52,19 @@
 				</ul>
 			</nav>
 		</header>
+		<!-- Główna treść strony -->
 		<main>
 			<div id="app"></div>
 		</main>
+		<!-- Stopka strona -->
 		<footer>
 			Copyright &copy; 2024 Witold Zawada
 		</footer>
+		<!-- type="module" znaczy, że plik JavaScript musi być załadowany przez serwer webowy -->
+		<!-- np. Node.js lub LiveServer -->
+		<!-- app.js: mini-framework SPA -->
 		<script type="module" src="js/app.js"></script>
+		<!-- client.js: kod JavaScript odpowiedzialny za otwieranie i zamykanie menu mobilnego -->
 		<script src="js/client.js"></script>
 	</body>
 </html>

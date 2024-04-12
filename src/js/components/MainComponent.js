@@ -1,10 +1,14 @@
 import { loadStyles } from '../helpers/utils.js'
 
+import { randomReviews } from '../helpers/reviews.js'
+
 export const MainComponent = () => {
 	document.title = 'GitGud Pizza'
 
 	const styles = async () => loadStyles('css/MainComponent.css')
 	const callback = async () => {
+		// Losujemy recenzje i wypełniamy nimi kontener
+		randomReviews(document.querySelector('.main-reviews'))
 		console.log(`MainComponent callback has been called`)
 	}
 
@@ -27,53 +31,10 @@ export const MainComponent = () => {
 						</p>
 					</div>
 					<div class="main-reviews">
-						<div class="review-box">
-							<div class="rating">
-							★★★★★
-							</div>
-							<div class="review-text">
-							"Super pizza i wspaniała obsługa! Przychodzę regularnie z rodziną i zawsze jesteśmy zadowoleni."
-							</div>
-							<div class="reviewer-name">
-							Maria, 25 marca 2024
-							</div>
-						</div>
-						<div class="review-box">
-							<div class="rating">
-							★★★★★
-							</div>
-							<div class="review-text">
-							"Najlepsza pizzeria w mieście! Jest kilka telewizorów, więc na mecz też można wpaść"
-							</div>
-							<div class="reviewer-name">
-							Dawid, 17 marca 2024
-							</div>
-						</div>
-						<div class="review-box">
-							<div class="rating">
-							★★★★★
-							</div>
-							<div class="review-text">
-							"Zdecydowanie polecam! Pizza zawsze świeża i pyszna. Moje dzieci i żona zadowoleni"
-							</div>
-							<div class="reviewer-name">
-							Zbigniew, 15 marca 2024
-							</div>
-						</div>
-						<div class="review-box">
-							<div class="rating">
-							★★★★☆
-							</div>
-							<div class="review-text">
-							"Pizza zawsze na czas i gorąca. Sosy mogłyby być większe, ale i tak polecam"
-							</div>
-							<div class="reviewer-name">
-							Ania, 12 marca 2024
-							</div>
-						</div>
+						<!-- Recenzje -->
 					</div>
-					<!-- Opinie Pollub WEiE na Google -->
 					<div class="main-more-reviews">
+						<!-- Opinie Pollub WEiI na Google -->
 						<a href="https://g.co/kgs/hCE7x7P" target="_blank" class="review-link">Zobacz wszystkie opinie →</a>
 					</div>
 				</section>
