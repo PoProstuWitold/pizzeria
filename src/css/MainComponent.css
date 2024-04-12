@@ -1,5 +1,6 @@
 /* MAIN COMPONENT */
 
+/* Style dla głównego kontenera komponentu */
 .main-container {
 	display: flex;
 	justify-content: center;
@@ -8,10 +9,12 @@
 	margin-bottom: 5rem;
 }
 
+/* Style dla sekcji baneru z obrazkiem i "tekstem promocyjnym" */
 .main-image {
 	position: relative;
 	color: white;
 	height: 20vh;
+	/* kalkuluje wysokość na całą szerokość wyświetlacza (100vw) minus szerokość scrolla (15px) */
 	width: calc(100vw - 15px);
 	display: flex;
 	flex-direction: column;
@@ -19,14 +22,19 @@
 	align-items: center;
 	font-size: 1.25rem;
 	text-align: center;
+	/* 
+	rzuca czarny cień na tekst, przez co jest on zawsze widoczny
+	nawet, gdyby tło było w kolorze tekstu
+	*/
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-
+/* Style dla nagłówka drugiego stopnia w kontenerze "main-image" */
 .main-image h2 {
 	font-size: 1.5rem;
 }
 
+/* Zapytania o media dla 768px */
 @media screen and (min-width: 768px) {
 	.main-image {
 		font-size: 3rem;
@@ -42,6 +50,10 @@
 	}
 }
 
+/* 
+Style dla kontenera z główną zawartością strony komponentu
+(pod kontenerem "main-image")
+*/
 .main-content {
 	display: flex;
 	flex-direction: column;
@@ -50,6 +62,7 @@
 	padding: 10px;
 }
 
+/* Style dla konteneru z recenzjami */
 .main-reviews {
 	display: flex;
 	flex-direction: column;
@@ -58,6 +71,7 @@
 	align-items: center;
 }
 
+/* Style dla kontenera pojedynczej recenzji */
 .review-box {
 	flex: 1;
 	border: 1px solid var(--primary-color);
@@ -66,38 +80,52 @@
 	margin-bottom: 10px;
 	width: 100%;
 }
-  
+
+/* Style dla oceny recenzji */
 .rating {
 	font-size: 1.5em;
 	color: #f39c12;
 }
-  
+
+/* Style dla nazwy recenzenta */
 .reviewer-name {
 	font-weight: bold;
 	margin-top: 10px;
 }
-  
+
+/* Style dla treści recenzji */
 .review-text {
 	margin-top: 10px;
 	font-style: italic;
 	text-align: justify;
 }
 
+/* Style dla linku do wszystkich recenzji */
 .review-link {
 	color: #000;
 	text-decoration: none;
 	font-weight: bold;
 	transition: all 0.1s ease-in-out; 
 }
-  
+
+/* 
+Style po najechaniu na link do wszystkich recenzji.
+Używa zmiennej CSS "accent-color" zdefiniowanej w pliku "main.css",
+który zawsze jest ładowany
+*/
 .review-link:hover {
 	color: var(--accent-color);
 }
   
+/* 
+Style dla kontenera przycisku do wyświetlania wszystkich recenzji.
+Istnieje po to, żeby link nie zajmował całej szerokości kontenera-rodzica.
+*/
 .main-more-reviews {
 	text-align: right;
 }
 
+/* Style dla zawartości sekcji z dostępną ofertą */
 .main-offer {
 	display: flex;
 	margin: auto;
@@ -108,6 +136,7 @@
 	padding: 0 2px;
 }
   
+/* Style dla tekstu dostępnej oferty */
 .main-offer-text {
 	display: flex;
 	flex-direction: column;
@@ -115,25 +144,30 @@
 	text-align: justify;
 }
 
+/* Style dla kontenera obrazka zespołu "GitGud Pizza" */
 .main-offer-image {
 	max-width: 25rem;
 }
 
+/* Style dla obrazka zespołu "GitGud Pizza" */
 .main-offer-image img {
 	border-radius: 25%;
 	width: auto;
 }
 
+/* Style dla podpisu pod obrazkiem zespołu "GitGud Pizza" */
 .main-offer-image figcaption {
 	margin-top: 0.25rem;
 	text-align: center;
 	font-weight: bold;
 }
 
+/* Style dla mini sekcji przed sekcją z recenzjami */
 .main-heading {
 	margin-bottom: 1.5rem;
 }
 
+/* Zapytania o media dla 1420px */
 @media screen and (min-width: 1420px) {
 	.main-offer {
 	  	flex-direction: row;

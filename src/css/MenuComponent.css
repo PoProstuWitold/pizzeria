@@ -1,5 +1,6 @@
 /* MENU COMPONENT */
 
+/* Style dla głównego kontenera komponentu */
 .menu-container {
 	display: flex;
 	flex-direction: column;
@@ -7,17 +8,20 @@
 	padding: 10px;
 }
 
+/* Style dla sekcji menu, np. Pizza, Kuchnia włoska, itd. */
 .menu-section {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
 }
 
+/* Style dla elementu rozwijającego sekcję menu */
 .collapsible {
 	font-weight: 800;
 	letter-spacing: 0.2rem;
 	transition: background-color 0.2s ease-in-out, border-radius 0.2s ease-in-out;
 	border-radius: 10px;
+	/* zmienna CSS zadeklarowana w "main.css" */
 	background-color: var(--accent-color);
 	color: white;
 	cursor: pointer;
@@ -29,16 +33,26 @@
 	font-size: 15px;
 }
 
+/* 
+Style dla elementu rozwijającego sekcję menu po najechaniu
+oraz dla klasy "active" (po kliknięciu)
+*/
 .active,
 .collapsible:hover {
 	background-color: #925310;
 }
 
+/* Style dla elementu rozwijającego sekcję menu po kliknięciu */
 .active {
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
 }
 
+/* 
+Style dla pseudo-klasy "after" klasy "collapsible", 
+czyli dla dodania zawartości i jej wystylowania "po" elemencie "collapsible".
+W tym przypadku jest to znak "+" jeśli sekcja jest zwinięta...
+*/
 .collapsible:after {
 	content: '\002B'; /* Unicode dla znaku "+"  */
 	color: white;
@@ -47,10 +61,12 @@
 	margin-left: 5px;
 }
 
+/* ...lub "-" jeśli jest rozwinięta */
 .active:after {
 	content: "\2212"; /* Unicode dla znaku "-"  */
 }
 
+/* Style dla zawartości rozwijanej sekcji */
 .collap-content {
 	max-height: 0;
 	overflow: hidden;
@@ -60,27 +76,37 @@
 	border-bottom-right-radius: 10px;
 }
 
+/* Style dla zawartości sekcji menu */
 .menu-content {
     width: 100%;
+	/* ramki komórek tabeli mają być połączone w jedną linię */
     border-collapse: collapse;
 }
 
+/* Style dla komórek nagłówku oraz komórki zawartości dla kontenera "menu-content" */
 .menu-content th, .menu-content td {
     padding: 10px;
 }
 
+/* 
+Style dla dla pierwszej kolumny (pierwszego dziecka) w wierszach nagłówka (th) 
+i danych (td) tabeli o klasie .menu-content 
+*/
 .menu-content th:nth-child(1), .menu-content td:nth-child(1) {
 	text-align: left;
 }
 
+/* Style dla pierwszej kolumny (pierwszego dziecka) w wierszach nagłówka (th) */
 .menu-content th:nth-child(1) {
     width: 60%;
 }
 
+/* Style dla 2. oraz 3. kolumny w wierszach nagłówka (th) */
 .menu-content th:nth-child(2), .menu-content th:nth-child(3) {
     width: 20%;
 }
 
+/* Zapytania o media dla 1100px */
 @media screen and (min-width: 1100px) {
 	.menu-content th:nth-child(1) {
 		width: 80%;
@@ -91,18 +117,26 @@
 	}
 }
 
+/* Style dla komórek nagłówku dla kontenera "menu-content" */
 .menu-content th {
     background-color: var(--secondary-color);
 }
 
+/* 
+Style dla parzystych wierszy (.menu-item) 
+Dzięki temu co drugi wiersz będzie miał inny kolor tła,
+co ułatwi odczytanie danych z menu.
+*/
 .menu-item:nth-child(even) {
     background-color: #d6cdcd;
 }
 
+/* Style dla nazwy pozycji w menu */
 .menu-name {
 	font-weight: bold;
 }
 
+/* Style dla ceny pozycji w menu */
 .menu-price {
 	text-align: center;
 }

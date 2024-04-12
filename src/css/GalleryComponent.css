@@ -1,11 +1,18 @@
 /* GALLERY COMPONENT */
 
+/* Style dla głównego kontenera komponentu */
 .gallery-container {
 	padding: 10px;
 }
 
+/* Style dla galerii zdjęć */
 .gallery-images {
+	/* ustawia typ wyświetlania elementu na siatkę (grid) */
 	display: grid;
+	/* definiuje liczbę i rozmiar kolumn w siatce. 
+	1fr oznacza, że siatka ma mieć jedną kolumnę, 
+	która zajmuje całą dostępną przestrzeń 
+	("fr" to jednostka oznaczająca "część dostępnego miejsca"). */
 	grid-template-columns: 1fr;
 	gap: 2rem;
 	margin: 2rem 0;
@@ -13,6 +20,10 @@
 	align-items: start;
 }
 
+/* 
+Style dla pojedynczego elementu w galerii.
+Jest to mini-kontener z pojedynczym zdjęciem oraz nazwą autora. 
+*/
 .gallery-item {
 	border: 1px solid #ccc;
 	padding: 1rem;
@@ -27,17 +38,23 @@
 	width: 100%;
 }
 
+/* Style po najechaniu na element galerii */
 .gallery-item:hover {
 	background-color: #f0f0f0;
 	cursor: pointer;
 }
 
+/* Style dla obrazka w mini kontenerze "gallery-item" w galerii */
 .gallery-item img {
 	height: 200px;
 	width: auto;
 	border-radius: 5px;
 }
 
+/* 
+Style dla tagu "dialog", który odpowiada za modalne okienko typu "pop-up 
+Can I Use: 96.08% (https://caniuse.com/dialog)
+*/
 dialog {
 	border-radius: 10px;
     position: fixed;
@@ -47,6 +64,7 @@ dialog {
 	width: 95%;
 }
 
+/* Style dla przycisku zamykającego okienko "dialog" */
 #close-dialog {
     background-color: #f44336;
 	width: 30px;
@@ -59,10 +77,12 @@ dialog {
     text-align: center;
 }
 
+/* Style po najechaniu na przycisk zamykający okienko dialog */
 #close-dialog:hover {
     background-color: #e60000;
 }
 
+/* Style dla kontenera okienka dialog */
 .dialog-container {
 	display: flex;
 	gap: 1rem;
@@ -71,6 +91,7 @@ dialog {
 	align-items: center;
 }
 
+/* Style dla nagłówka zawartości kontenera "dialog-container" */
 .dialog-header {
     font-size: 1rem;
 	display: flex;
@@ -82,6 +103,7 @@ dialog {
 	border-bottom: 1px solid #ccc;
 }
 
+/* Style dla przycisków przełączania zdjęć w okienku dialog */
 .dialog-button {
 	border-radius: 10px;
     font-size: 2em;
@@ -98,10 +120,15 @@ dialog {
 	transition: opacity 0.1s ease-in-out;
 }
 
+/* Style po najechaniu na przyciski w okienku dialog */
 .dialog-button:hover {
 	opacity: 1;
 }
 
+/* 
+Style dla ciała w kontenerze dialog. 
+Znajdują się tu przyciski i powiększone zdjęcie w lepszej rozdzielczości 
+*/
 .dialog-body {
 	width: 100%;
 	display: flex;
@@ -109,6 +136,7 @@ dialog {
 	gap: 1rem;
 }
 
+/* Style dla zdjęcia w okienku dialog */
 .dialog-img {
 	margin: auto;
 	width: auto;
@@ -116,6 +144,7 @@ dialog {
 	border-radius: 10px;
 }
 
+/* Zapytania o media dla 768px */
 @media screen and (min-width: 768px) {
 	dialog {
 		width: 50%;
@@ -125,6 +154,19 @@ dialog {
 		height: 20rem;
 	}
 
+	/*
+	repeat(auto-fit, minmax(10rem, 1fr)) - funkcją, która automatycznie tworzy tak wiele kolumn, 
+	ile zmieści się w kontenerze;
+	auto-fit - działa na zasadzie wypełniania dostępnego miejsca w kontenerze jak największą ilością kolumn. 
+	Liczba kolumn dostosowuje się do szerokości kontenera;
+	minmax(10rem, 1fr) - określa minimalną i maksymalną szerokość każdej kolumny. 
+	10rem - minimalna szerokość, a 1fr - maksymalna szerokość;
+	fr - jednostka reprezentująca “część dostępnego miejsca”.
+
+	W skrócie: 
+	kod tworzy responsywny układ siatki, który automatycznie dostosowuje liczbę 
+	i szerokość kolumn do dostępnej przestrzeni
+	*/
 	.gallery-images {
 		grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
 	}
@@ -134,17 +176,25 @@ dialog {
 	}
 }
 
+/* Zapytania o media dla 1024px */
 @media screen and (min-width: 1024px) {
 	.dialog-img {
 		height: 25rem;
 	}
 }
 
+/* 
+transform: translateY(-50%); - przesunięcie elementu wzdłuż osi Y (pionowej) o wartość równą -50% jego własnej wysokości.
+Przesuwa element o 50% w górę względem swojej pozycji wyjściowej.
+*/
+/* Style dla przycisku przełączającego zdjęcie na poprzednie */
 #prev-dialog {
 	left: 1.5rem;
 	transform: translateY(-50%);
 }
 
+
+/* Style dla przycisku przełączającego zdjęcie na następne */
 #next-dialog {
 	right: 1.5rem;
 	transform: translateY(-50%);

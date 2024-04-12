@@ -1,5 +1,6 @@
 /* ERROR COMPONENT */
 
+/* Style dla głównego kontenera komponentu */
 .error-container {
     display: flex;
     flex-direction: column;
@@ -8,16 +9,19 @@
     text-align: center;
 }
 
+/* Style dla tytułu błędu: "Błąd <kod_błędu> */
 .error-title {
     font-size: 4em;
     margin-bottom: 20px;
 }
 
+/* Style dla wiadomości błędu */
 .error-message {
     font-size: 1.5rem;
     margin-bottom: 40px;
 }
 
+/* Style dla przycisku powrotu do strony głównej */
 .error-button {
     padding: 10px 20px;
     font-size: 1.5rem;
@@ -29,6 +33,7 @@
     transition: background-color 0.3s ease;
 }
 
+/* Style po najechaniu na przycisk */
 .error-button:hover {
 	background-color: #b22d24;
 }

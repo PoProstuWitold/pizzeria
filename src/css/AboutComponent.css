@@ -1,5 +1,6 @@
 /* ABOUT COMPONENT */
 
+/* Style dla głównego kontenera komponentu */
 .about-container {
 	display: flex;
 	flex-direction: column;
@@ -7,10 +8,12 @@
 	padding: 10px;
 }
 
+/* Wyjustowanie tekstu dla paragrafów w kontenerze */
 .about-container p {
 	text-align: justify;
 }
 
+/* Pogrubienie, pochylenie oraz dekoracja tekstu */
 .source-code-link {
 	font-weight: bold;
 	font-style: italic;

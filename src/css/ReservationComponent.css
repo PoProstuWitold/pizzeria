@@ -1,10 +1,12 @@
 /* RESERVATION COMPONENT */
 
+/* Style dla głównego kontenera komponentu */
 .reservation-container {
 	padding: 10px;
 	text-align: justify;
 }
 
+/* Style dla formularza rezerwacji */
 #rezerwacja {
 	width: 100%;
 	display: flex;
@@ -16,21 +18,25 @@
 	border-radius: 10px;
 }
 
+/* Style dla nagłówka formularza */
 #rezerwacja h2 {
 	text-align: center;
 }
 
+/* Zapytania o media dla 1000px */
 @media screen and (min-width: 1000px) {
 	#rezerwacja {
 		width: min(50%, 40rem);
 	}
 }
 
+/* Style dla znacznika etykiety do różnych inputów */
 label {
 	display: block;
 	font-weight: bold;
 }
 
+/* Style dla wymienonych inputów oraz znacznika "select" */
 input[type="text"],
 input[type="email"],
 input[type="date"],
@@ -42,6 +48,7 @@ select {
 	width: 100%;
 }
 
+/* Style dla wymienionych inputów */
 input[type="submit"],
 input[type="reset"] {
 	padding: 0.5rem;
@@ -55,23 +62,32 @@ input[type="reset"] {
 	transition: background-color 0.3s ease-in-out;
 }
 
+/* Style po najechaniu kursorem dla wymienionych inputów */
 input[type="submit"]:hover,
 input[type="reset"]:hover {
 	background-color: #7a4d1d;
 }
 
+/*
+Z uwagi na różne zachowanie inputów, 
+musiałem wydzielić kilka klas dla ich różnych grup.
+*/
+
+/* Style dla grupy inputów nr. 1 */
 .input-group1 {
 	display: flex;
 	flex-direction: column;
 	gap: 0.2rem;
 }
 
+/* Style dla grupy inputów nr. 2 */
 .input-group2 {
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
 }
 
+/* Style dla grupy inputów nr. 3 */
 .input-group3 {
 	width: 100%;
 	border: 1px solid black;
@@ -81,6 +97,7 @@ input[type="reset"]:hover {
 	font-weight: bold;
 }
 
+/* Style dla pola typu "radio" z wyborem podmioru rezerwującego */
 .issuer {
 	display: flex;
 	width: 100%;
@@ -88,41 +105,60 @@ input[type="reset"]:hover {
 	justify-content: space-evenly;
 }
 
+/* Style dla wiadomości z błędem */
 .error-message {
 	margin: 0.3rem 0;
 	color: var(--error-color);
 }
 
+/*
+Style dla pudełka z błędem dla znaczników: 
+"label" oraz "legend" w znaczniku "fieldset"
+*/
 .error label,
 .error fieldset legend {
 	color: var(--error-color);
 }
 
+/*
+Style dla pudełka z błędem dla znaczników:
+"input" oraz "fieldset"
+*/
 .error input,
 .error fieldset {
 	border: 3px solid var(--error-color);
 }
 
-
+/* Style dla wiadomości z informacją */
 .info-message {
 	margin: 0.3rem 0;
 	color: var(--info-color);
 }
 
+/*
+Style dla pudełka z informacją dla znaczników:
+"label"
+*/
 .info label {
 	color: var(--info-color);
 }
 
+/*
+Style dla pudełka z informacją dla znaczników:
+"input"
+*/
 .info input {
 	border: 3px solid var(--info-color);
 }
 
+/* Style dla przycisków "submit" oraz "reset" w formularzu*/
 .input-buttons {
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
 }
 
+/* Style dla karty z rezerwacją */
 .card {
     border: 1px solid #ccc;
     background-color: #f9f9f9;
@@ -131,12 +167,14 @@ input[type="reset"]:hover {
     width: 100%;
 }
 
+/* Zapytania o media dla minimalnej szerokości 480px */
 @media screen and (min-width: 480px) {
     .card {
         max-width: 45rem;
     }
 }
 
+/* Style dla nagłówka karty z rezerwacją */
 .card-header {
 	display: flex;
 	justify-content: space-between;
@@ -145,15 +183,18 @@ input[type="reset"]:hover {
 	padding-bottom: 1rem;
 }
 
+/* Style dla pojedynczych wierszy rezerwacji */
 .card-text {
     margin: 10px 0;
 }
 
+/* Style dla sekcji z rezerwacjami */
 .reservation-section {
 	display: flex;
 	flex-direction: column;
 }
 
+/* Style dla sekcji z kartami rezerwacji */
 .reservations {
     display: grid;
     grid-template-columns: 1fr;
@@ -163,12 +204,27 @@ input[type="reset"]:hover {
     align-items: start;
 }
 
+/* Zapytania o media dla minimalnej szerokości 768px */
 @media screen and (min-width: 768px) {
+	/*
+	repeat(auto-fit, minmax(13rem, 1fr)) - funkcją, która automatycznie tworzy tak wiele kolumn, 
+	ile zmieści się w kontenerze;
+	auto-fit - działa na zasadzie wypełniania dostępnego miejsca w kontenerze jak największą ilością kolumn. 
+	Liczba kolumn dostosowuje się do szerokości kontenera;
+	minmax(23rem, 1fr) - określa minimalną i maksymalną szerokość każdej kolumny. 
+	23rem - minimalna szerokość, a 1fr - maksymalna szerokość;
+	fr - jednostka reprezentująca “część dostępnego miejsca”.
+
+	W skrócie: 
+	kod tworzy responsywny układ siatki, który automatycznie dostosowuje liczbę 
+	i szerokość kolumn do dostępnej przestrzeni
+	*/
     .reservations {
         grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
     }
 }
 
+/* Style dla przycisku usunięcia rezerwacji */
 .delete-button {
 	background-color: var(--error-color);
 	color: #fff;
@@ -180,10 +236,15 @@ input[type="reset"]:hover {
 	transition: background-color 0.3s ease-in-out;
 }
 
+/* Style po najechaniu na przycisk usunięcia rezerwacji */
 .delete-button:hover {
 	background-color: #580303;
 }
 
+/*
+Style dla przycisku wypełnienia formularza,
+jeśli rezerwacja już istnieje
+*/
 #fill-button {
 	padding: 0.5rem;
 	text-transform: uppercase;
@@ -196,6 +257,10 @@ input[type="reset"]:hover {
 	transition: background-color 0.3s ease-in-out;
 }
 
+/* 
+Style po najechaniu na przycisk wypełnienia formularza,
+jeśli rezerwacja już istnieje
+*/
 #fill-button:hover {
 	background-color: #1b70b5;
 }

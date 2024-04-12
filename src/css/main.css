@@ -1,60 +1,104 @@
+/* MAIN CSS */
+
+/* Style dla wszystkich znaczników */
 * {
+	/* padding i border są zawarte wewnątrz szerokości i wysokości elementu, a nie dodawane do niej */
 	box-sizing: border-box;
 	border-width: 0;
 	margin: 0;
 }
 
+/* Style dla znacznika html */
 html {
+	/* 
+	Linijka poniżej ustawia odstęp między wierszami tekstu w elemencie HTML na 1.5
+	To oznacza, że każdy wiersz tekstu będzie miał odstęp 1.5 razy większy niż wysokość czcionki.
+	Na przykład, jeśli wysokość czcionki wynosi 16 pikseli, to odstęp między wierszami będzie wynosił 24 piksele
+	*/
 	line-height: 1.5;
+	/* Ustawia rozmiar tabulatora na 4 spacje */
 	tab-size: 4;
+	/* Ustawia czcionkę */
 	font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	/* Ustawia normalne ustawienia funkcji czcionki */
 	font-feature-settings: normal;
+	/* Ustawia normalne ustawienia wariacji czcionki */
 	font-variation-settings: normal;
 }
 
+/* Style dla znacznika body */
 body {
+	/* Ustawia marginesy na 0 */
 	margin: 0;
+	/* Dziedziczy wysokość linii po elemencie nadrzędnym - html */
 	line-height: inherit;
+	/* Ustawia czcionkę na sans-serif, czyli taką, która nie ma ozdobników na końcach liter */
 	font-family: sans-serif;
+	/* Ustawia kolor tekstu na zmienną CSS o nazwie "primary-color" */
 	color: var(--primary-color);
 }
 
+/* Style dla znacznika a */
 a {
+	/* dziedzicy kolor tekstu po elemencie nadrzędnym */
 	color: inherit;
+	/* dziedziczy dekorację tekstu po elemencie nadrzędnym */
 	text-decoration: inherit;
 }
 
+/* Style dla znacznika button */
 button {
+	/* przezroczyste tło */
   	background-color: transparent;
+	/* kursor wskaźnikowy */
 	cursor: pointer;
 }
 
+/* Style dla znaczników img oraz svg */
 img,
-svg{
+svg {
+	/* 
+	ustawia rodzaj wyświetlania na "block",
+	czyli zaczyna się od nowej linii i zajmuje całą dostępną szerokość
+	*/
   	display: block;
 	max-width: 100%;
 	height: auto;
 }
 
+/* 
+Style dla klasy hidden.
+Pomocnicza klasa do np. usuwania elementów menu mobilnego
+na desktopie lub elementów, które nie powinny być aktualnie widoczne.
+*/
 .hidden {
-  display: none;
+	display: none;
 }
 
+/*
+Style dla pseudoklasy root.
+Znajdują się tutaj zmienne CSS, które można wykorzystać w całym projekcie.
+Trzy pierwsze są stworzone na podstawie kolorów logo strony. 
+*/
 :root {
 	--primary-color: #352a11;
 	--secondary-color: #a0927f;
 	--accent-color: #ae6e29;
-	--success-color: #5dc232;
 	--error-color: #f44336;
 	--info-color: #2196f3;
 }
 
+/*
+Style dla znacznika #app.
+Jest to główny kontener, w którym znajduje się cała zawartość podstron SPA.
+*/
 #app {
 	margin: 0 1.5rem; 
 	gap: 1.5rem; 
     min-height: 85vh;
 }
 
+/* Zapytanie o media dla minimalnej szerokości 768px */
 @media screen and (min-width: 768px) {
 	#app {
 		margin-left: 7rem;
@@ -63,14 +107,17 @@ svg{
 	}
 }
 
+/* Style dla nagłówka strony. Znajduje się tu nawigacja oraz banner z godzinami otwarcia */
 .header {
 	position: sticky; 
 	top: 0; 
 	z-index: 50; 
 	background-color: #ffffff; 
+	/* cień, żeby nagłówek nie zlewał się z elementami "pod nim" */
 	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
 }
 
+/* Style dla baneru z godzinami otwarcia */
 .banner {
 	padding-top: 0.25rem;
 	padding-bottom: 0.25rem; 
@@ -84,6 +131,7 @@ svg{
 	background: var(--primary-color);
 }
 
+/* Style dla stopki strony */
 footer {
 	display: flex; 
 	flex-direction: column; 
@@ -97,6 +145,7 @@ footer {
 	line-height: 1rem; 
 }
 
+/* Style dla głównego kontenera z nawigacją desktopową */
 .navigation {
 	display: flex; 
 	padding-left: 1.25rem;
@@ -109,6 +158,7 @@ footer {
 	border-color: var(--secondary-color);
 }
 
+/* Style dla logo */
 .logo {
 	display: flex; 
 	gap: 0.5rem; 
@@ -117,11 +167,13 @@ footer {
 	font-weight: 800; 
 }
 
+/* Style dla obrazka w logo */
 .logo img {
 	width: 2.5rem; 
 	height: 2.5rem; 
 }
 
+/* Style dla pomocniczego kontenera z menu desktopowym */
 .desktop-menu {
 	display: none; 
 	padding: 1.25rem; 
@@ -131,17 +183,20 @@ footer {
 	list-style: none;
 }
 
+/* Style dla elementów menu desktopowego */
 .desktop-menu li a {
 	border-radius: 5px;
 	padding: 0.75rem 1rem;
 	transition: all 0.2s ease-in-out;
 }
 
+/* Style dla elementów menu desktopowego po najechaniu kursorem */
 .desktop-menu li a:hover {
 	background-color: var(--accent-color);
 	color: white;
 }
 
+/* Style dla przycisku menu mobilnego */
 .mobile-menu-button {
 	display: flex; 
 	align-items: center; 
@@ -149,6 +204,7 @@ footer {
 	font-style: italic; 
 }
 
+/* Zapytania o media dla minimalnej szerokości 850px */
 @media (min-width: 850px) { 
 	.desktop-menu {
 		display: flex; 
@@ -164,11 +220,13 @@ footer {
 	}
 }
 
+/* Style dla obrazku typu "burger button" dla przycisku menu mobilnego */
 .mobile-menu-button svg {
 	width: 2.5rem; 
 	height: 2.5rem;
 }
 
+/* Style dla kontenera pomocniczego menu mobilnego */
 .mobile-menu {
 	display: flex; 
 	position: absolute; 
@@ -183,12 +241,14 @@ footer {
 	background: var(--secondary-color);
 }
 
+/* Style dla elementów menu mobilnego */
 .mobile-menu li {
 	display: flex; 
 	width: 100%; 
 	text-align: center; 
 }
 
+/* Style dla przycisków menu mobilnego */
 .mobile-menu li a {
 	width: 100%; 
 	border-radius: 10px;
@@ -196,6 +256,7 @@ footer {
 	transition: all 0.2s ease-in-out;
 }
 
+/* Style dla przycisków menu mobilnego po najechaniu kursorem */
 .mobile-menu li a:hover {
 	background-color: var(--accent-color);
 }
