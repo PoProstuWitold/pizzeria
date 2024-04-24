@@ -2,20 +2,20 @@
 
 /* Style dla głównego kontenera komponentu */
 .about-container {
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-	padding: 10px;
+	display: flex; /* Ustawienie kontenera na flexbox */
+	flex-direction: column; /* Ustawienie kierunku flexbox na kolumnę */
+	gap: 0.5rem; /* Ustawienie odstępu między elementami w kontenerze */
+	padding: 10px; /* Wewnętrzny margines kontenera */
 }
 
 /* Wyjustowanie tekstu dla paragrafów w kontenerze */
 .about-container p {
-	text-align: justify;
+	text-align: justify; /* Wyjustowanie tekstu */
 }
 
 /* Pogrubienie, pochylenie oraz dekoracja tekstu */
 .source-code-link {
-	font-weight: bold;
-	font-style: italic;
-	text-decoration: underline;
+	font-weight: bold; /* Pogrubienie tekstu */
+	font-style: italic; /* Pochylenie tekstu */
+	text-decoration: underline; /* Podkreślenie tekstu */
 }

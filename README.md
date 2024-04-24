@@ -20,7 +20,7 @@ cd pizzeria
 ```
 
 ### Node.js
-Z racji, że aplikacja używa dynamicznego importowania komponentów, wymagane jest uruchomienie jej z poziomu serwera. W tym celu należy użyć polecenia ``node server.mjs`` będąc w głównym katalogu projektu. Wymagane jest środowisko **[Node.js](https://nodejs.org/)**. Aplikacja była realizowana pod ten sposób uruchamiania.
+Z racji, że aplikacja używa dynamicznego importowania komponentów oraz *History API*, wymagane jest uruchomienie jej z poziomu serwera. W tym celu należy użyć polecenia ``node server.mjs`` będąc w głównym katalogu projektu. Wymagane jest środowisko **[Node.js](https://nodejs.org/)**. Aplikacja była realizowana pod ten sposób uruchamiania.
 
 ### Docker
 Aplikacja posiada też obraz dockerowy, który można odpalić wykonując kolejno poniższe polecenia:
@@ -42,19 +42,19 @@ W obu przypadkach aplikacja będzie dostępna pod adresem ``localhost:3005`` lub
 **`Dockerfile`** i **`.dockerignore`** - Pliki potrzebne do zbudowania i uruchomienia obrazu dockerowego.
 
 ## Dostępne ścieżki:
-**"/"** - Strona startowa aplikacji.
+**"/"** - Strona startowa aplikacji. Pseudolosowo generowane recenzje. 
 
 **"/o-nas"** - Informacje o autorze.
 
 **"/menu"** - Menu restauracji.
 
-**"/galeria"** - Dynamicznie generowana galeria z użyciem ***[API serwisu Pixabay](https://pixabay.com/api/docs/)*** przy pomocy ***Fetch API***.
+**"/galeria"** - Dynamicznie generowana galeria z użyciem ***[API serwisu Pixabay](https://pixabay.com/api/docs/)*** przy pomocy ***Fetch API*** oraz znacznika HTML dialog, który na [Can I Use](https://caniuse.com/dialog) ma ponad 96% wsparcia. W przypadku błędu z wczytaniem obrazków, renderowany jest błąd *400 Bad Request*.
 
-**"/kontakt"** - Informacje kontakowe oraz mapa Google.
+**"/kontakt"** - Informacje kontaktowe oraz mapa Google z lokalizacją pizzerii. 
 
-**"/rezerwacja"** - Szczegółowo walidowany formularz rezerwacji oraz lista wszystkich rezerwacji użytkownika z możliwością ich edycji oraz usunięcia.
+**"/rezerwacja"** - Szczegółowo walidowany formularz rezerwacji oraz lista wszystkich rezerwacji użytkownika z możliwością ich edycji oraz usunięcia. Zapisywane jako tablica w `localStorage` z użyciem `JSON.parse()` oraz `JSON.stringify()`.
 
-**"/*"** - Każda inna ścieżka jest obsługiwana przez stronę błędu z odpowiednim kodem (np. 404 w przypadku, gdy strona nie istnieje).
+**"/*"** - Strona z błędem *404 Not Found*.
 
 ## Disclaimer
 Wszystkie obrazki są na licencji ***[Pixabay](https://pixabay.com/service/license-summary/)***, czyli w skrócie dozwolone jest używanie tych obrazków za darmo bez wzmianki autorów, aczkolwiek zabronione jest wykorzystywanie ich w celach komercyjnych.

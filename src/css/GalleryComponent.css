@@ -2,7 +2,7 @@
 
 /* Style dla głównego kontenera komponentu */
 .gallery-container {
-	padding: 10px;
+	padding: 10px; /* Wewnętrzny margines kontenera */
 }
 
 /* Style dla galerii zdjęć */
@@ -14,10 +14,10 @@
 	która zajmuje całą dostępną przestrzeń 
 	("fr" to jednostka oznaczająca "część dostępnego miejsca"). */
 	grid-template-columns: 1fr;
-	gap: 2rem;
-	margin: 2rem 0;
-	justify-items: center;
-	align-items: start;
+	gap: 2rem; /* Odstęp między elementami w siatce */
+	margin: 2rem 0; /* Definicja marginesów zewnętrznych: oś Y, oś X */
+	justify-items: center; /* Wyśrodkowanie elementów wzdłuż osi poziomej */
+	align-items: start; /* Wyśrodkowanie elementów wzdłuż osi pionowej */
 }
 
 /* 
@@ -25,104 +25,105 @@ Style dla pojedynczego elementu w galerii.
 Jest to mini-kontener z pojedynczym zdjęciem oraz nazwą autora. 
 */
 .gallery-item {
-	border: 1px solid #ccc;
-	padding: 1rem;
-	gap: 1rem;
-	border-radius: 5px;
-	background-color: #f9f9f9;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	transition: background-color 0.3s ease-in-out;
-	width: 100%;
+	border: 1px solid #ccc; /* Obramowanie elementu */
+	padding: 1rem; /* Wewnętrzny margines elementu */
+	gap: 1rem; /* Odstęp między elementami w kontenerze */
+	border-radius: 5px; /* Zaokrąglenie rogów */
+	background-color: #f9f9f9; /* Kolor tła */
+	display: flex; /* Ustawienie kontenera na flexbox */
+	flex-direction: column; /* Ustawienie kierunku flexbox na kolumnę */
+	justify-content: center; /* Wyśrodkowanie elementów wzdłuż osi poziomej */
+	align-items: center; /* Wyśrodkowanie elementów wzdłuż osi pionowej */
+	transition: background-color 0.3s ease-in-out; /* Efekt przejścia */
+	width: 100%; /* Szerokość elementu */
 }
 
 /* Style po najechaniu na element galerii */
 .gallery-item:hover {
-	background-color: #f0f0f0;
-	cursor: pointer;
+	background-color: #f0f0f0; /* Zmiana koloru tła */
+	cursor: pointer; /* Zmiana kursora na wskaźnik */
 }
 
 /* Style dla obrazka w mini kontenerze "gallery-item" w galerii */
 .gallery-item img {
-	height: 200px;
-	width: auto;
-	border-radius: 5px;
+	height: 200px; /* Wysokość obrazka */
+	width: auto; /* Automatyczne dostosowanie szerokości */
+	border-radius: 5px; /* Zaokrąglenie rogów */
 }
 
 /* 
 Style dla tagu "dialog", który odpowiada za modalne okienko typu "pop-up 
 Can I Use: 96.08% (https://caniuse.com/dialog)
 */
+/* Centrowanie znacznika "dialog" */
 dialog {
-	border-radius: 10px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-	width: 95%;
+	border-radius: 10px; /* Zaokrąglenie rogów */
+    position: fixed; /* Ustawienie pozycji na "stałą" względem rodzica */
+    top: 50%; /* Ustawienie odległości od góry ekranu */
+    left: 50%; /* Ustawienie odległości od lewej krawędzi ekranu */
+    transform: translate(-50%, -50%); /* Przesunięcie okienka o 50% w lewo i 50% w górę */
+	width: 95%; /* Szerokość okienka */
 }
 
 /* Style dla przycisku zamykającego okienko "dialog" */
 #close-dialog {
-    background-color: #f44336;
-	width: 30px;
-	height: 30px;
-    color: white;
-	font-weight: 900;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
+    background-color: #f44336; /* Kolor tła przycisku */
+	width: 30px; /* Szerokość przycisku */
+	height: 30px; /* Wysokość przycisku */
+    color: white; /* Kolor tekstu */
+	font-weight: 900; /* Pogrubienie tekstu */
+    border: none; /* Usunięcie obramowania */
+    cursor: pointer; /* Zmiana kursora na wskaźnik */
+    border-radius: 5px; /* Zaokrąglenie rogów */
+    text-align: center; /* Wyśrodkowanie tekstu */
 }
 
 /* Style po najechaniu na przycisk zamykający okienko dialog */
 #close-dialog:hover {
-    background-color: #e60000;
+    background-color: #e60000; /* Zmiana koloru tła */
 }
 
 /* Style dla kontenera okienka dialog */
 .dialog-container {
-	display: flex;
-	gap: 1rem;
-	flex-direction: column;
-	justify-content: stretch;
-	align-items: center;
+	display: flex; /* Ustawienie kontenera na flexbox */
+	gap: 1rem; /* Odstęp między elementami w kontenerze */
+	flex-direction: column; /* Ustawienie kierunku flexbox na kolumnę */
+	justify-content: stretch; /* Rozciągnięcie elementów wzdłuż osi poziomej */
+	align-items: center; /* Wyśrodkowanie elementów wzdłuż osi pionowej */
 }
 
 /* Style dla nagłówka zawartości kontenera "dialog-container" */
 .dialog-header {
-    font-size: 1rem;
-	display: flex;
-	gap: 1rem;
-	width: 100%;
-	justify-content: space-between;
-	align-items: center;
-	padding: 10px 0;
-	border-bottom: 1px solid #ccc;
+    font-size: 1rem; /* Rozmiar czcionki */
+	display: flex; /* Ustawienie kontenera na flexbox */
+	gap: 1rem; /* Odstęp między elementami w kontenerze */
+	width: 100%; /* Szerokość kontenera */
+	justify-content: space-between; /* Rozłożenie elementów w kontenerze */
+	align-items: center; /* Wyśrodkowanie elementów wzdłuż osi pionowej */
+	padding: 10px 0; /* Wewnętrzny margines kontenera: oś Y, oś X */
+	border-bottom: 1px solid #ccc; /* Obramowanie dolne */
 }
 
 /* Style dla przycisków przełączania zdjęć w okienku dialog */
 .dialog-button {
-	border-radius: 10px;
-    font-size: 2em;
-    background: none;
-    border: none;
-    cursor: pointer;
-	color: black;
-	border: 3px solid black;
-	background-color: white;
-	position: absolute;
-	top: 55%;
-	width: 3.5rem;
-	opacity: 0.5;
-	transition: opacity 0.1s ease-in-out;
+	border-radius: 10px; /* Zaokrąglenie rogów */
+    font-size: 2em; /* Rozmiar czcionki */
+    background: none; /* Usunięcie tła */
+    border: none; /* Usunięcie obramowania */
+    cursor: pointer; /* Zmiana kursora na wskaźnik */
+	color: black; /* Kolor tekstu */
+	border: 3px solid black; /* Obramowanie */
+	background-color: white; /* Kolor tła */
+	position: absolute; /* Ustawienie pozycji na "stałą" względem całego dokumentu */
+	top: 55%; /* Ustawienie odległości od góry ekranu */
+	width: 3.5rem; /* Szerokość przycisku */
+	opacity: 0.5; /* Przezroczystość */
+	transition: opacity 0.1s ease-in-out; /* Efekt przejścia */
 }
 
 /* Style po najechaniu na przyciski w okienku dialog */
 .dialog-button:hover {
-	opacity: 1;
+	opacity: 1; /* Zmiana przezroczystości */
 }
 
 /* 
@@ -130,28 +131,28 @@ Style dla ciała w kontenerze dialog.
 Znajdują się tu przyciski i powiększone zdjęcie w lepszej rozdzielczości 
 */
 .dialog-body {
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	gap: 1rem;
+	width: 100%; /* Szerokość kontenera */
+	display: flex; /* Ustawienie kontenera na flexbox */
+	flex-direction: row; /* Ustawienie kierunku flexbox na wiersz */
+	gap: 1rem; /* Odstęp między elementami w kontenerze */
 }
 
 /* Style dla zdjęcia w okienku dialog */
 .dialog-img {
-	margin: auto;
-	width: auto;
-	height: 17rem;
-	border-radius: 10px;
+	margin: auto; /* Automatyczne wyśrodkowanie elementu */
+	width: auto; /* Automatyczne dostosowanie szerokości */
+	height: 17rem; /* Wysokość zdjęcia */
+	border-radius: 10px; /* Zaokrąglenie rogów */
 }
 
 /* Zapytania o media dla 768px */
 @media screen and (min-width: 768px) {
 	dialog {
-		width: 50%;
+		width: 50%; /* Szerokość okienka */
 	}
 
 	.dialog-img {
-		height: 20rem;
+		height: 20rem; /* Wysokość zdjęcia */
 	}
 
 	/*
@@ -172,14 +173,14 @@ Znajdują się tu przyciski i powiększone zdjęcie w lepszej rozdzielczości
 	}
 
 	.gallery-item img {
-		max-height: 110px;
+		max-height: 110px; /* Maksymalna wysokość obrazka */
 	}
 }
 
 /* Zapytania o media dla 1024px */
 @media screen and (min-width: 1024px) {
 	.dialog-img {
-		height: 25rem;
+		height: 25rem; /* Wysokość zdjęcia */
 	}
 }
 
@@ -189,13 +190,13 @@ Przesuwa element o 50% w górę względem swojej pozycji wyjściowej.
 */
 /* Style dla przycisku przełączającego zdjęcie na poprzednie */
 #prev-dialog {
-	left: 1.5rem;
-	transform: translateY(-50%);
+	left: 1.5rem; /* Odległość od lewej krawędzi ekranu */
+	transform: translateY(-50%); /* Przesunięcie przycisku o 50% w górę */
 }
 
 
 /* Style dla przycisku przełączającego zdjęcie na następne */
 #next-dialog {
-	right: 1.5rem;
-	transform: translateY(-50%);
+	right: 1.5rem; /* Odległość od prawej krawędzi ekranu */
+	transform: translateY(-50%); /* Przesunięcie przycisku o 50% w górę */
 }

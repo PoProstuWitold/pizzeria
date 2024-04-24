@@ -14,7 +14,7 @@ export const randomReviews = (reviewContainer) => {
 
         // Jeśli nie ma recenzji z taką oceną, losujemy kolejną ocenę
         while (reviewIndex === -1) {
-            randomRating = Math.floor(Math.random() * 5) + 1;
+            randomRating = Math.floor(Math.random() * 5) + 1
             reviewIndex = reviewsCopy.findIndex(review => review.rating === randomRating)
         }
 
@@ -30,6 +30,8 @@ export const randomReviews = (reviewContainer) => {
             date = randomDate(new Date(2024, 2, 12), new Date(Date.now() - oneDay))
         }
         previousDate = date
+		
+		// Ustawiamy ją w polskim formacie, a konkretnie w formie, np. "12 marca 2024" 
         review.date = date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' })
 
         // Tworzymy nowy element div
@@ -37,12 +39,15 @@ export const randomReviews = (reviewContainer) => {
         reviewBox.classList.add('review-box')
         reviewBox.innerHTML = /*html*/`
             <div class="rating">
+				<!-- Dodajemy tyle gwiazdek, ile wynosi ocena, a resztę dopełniamy pustymi aż do 5 łącznie -->
                 ${review.rating > 0 ? '★'.repeat(review.rating)+'☆'.repeat(5-review.rating) : 'Brak oceny'}
             </div>
             <div class="review-text">
+				<!-- Wstawiamy tekst recenzji  -->
                 "${review.text}"
             </div>
             <div class="reviewer-name">
+				<!-- Wstawiamy nazwę recenzenta oraz datę recenzji  -->
                 ${review.reviewer}, ${review.date}
             </div>
         `

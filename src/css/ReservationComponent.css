@@ -2,38 +2,38 @@
 
 /* Style dla głównego kontenera komponentu */
 .reservation-container {
-	padding: 10px;
-	text-align: justify;
+	padding: 10px; /* Wewnętrzny margines kontenera */
+	text-align: justify; /* Wyrównanie tekstu do lewej i prawej */
 }
 
 /* Style dla formularza rezerwacji */
 #rezerwacja {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-	margin: 1rem auto;
-	background-color: #ccc;
-	padding: 2rem;
-	border-radius: 10px;
+	width: 100%; /* Szerokość kontenera wynosi 100% */
+	display: flex; /* Ustawienie kontenera na flexbox */
+	flex-direction: column; /* Ustawienie kierunku flexbox na kolumnę */
+	gap: 1rem; /* Odstęp między elementami w kontenerze */
+	margin: 1rem auto; /* Zewnętrzny margines kontenera */
+	background-color: #ccc; /* Kolor tła kontenera */
+	padding: 2rem; /* Wewnętrzny margines kontenera */
+	border-radius: 10px; /* Zaokrąglenie rogów */
 }
 
 /* Style dla nagłówka formularza */
 #rezerwacja h2 {
-	text-align: center;
+	text-align: center; /* Wyrównanie tekstu do środka */
 }
 
 /* Zapytania o media dla 1000px */
 @media screen and (min-width: 1000px) {
 	#rezerwacja {
-		width: min(50%, 40rem);
+		width: min(50%, 40rem); /* Szerokość kontenera wynosi 50% lub 40rem w zależności od tego, co jest mniejsze */
 	}
 }
 
 /* Style dla znacznika etykiety do różnych inputów */
 label {
-	display: block;
-	font-weight: bold;
+	display: block; /* Ustawienie kontenera na blok */
+	font-weight: bold; /* Pogrubienie tekstu */
 }
 
 /* Style dla wymienonych inputów oraz znacznika "select" */
@@ -43,29 +43,29 @@ input[type="date"],
 input[type="time"],
 input[type="number"],
 select {
-	padding: 0.5rem;
-	border-radius: 10px;
-	width: 100%;
+	padding: 0.5rem; /* Wewnętrzny margines */
+	border-radius: 10px; /* Zaokrąglenie rogów */
+	width: 100%; /* Szerokość kontenera wynosi 100% */
 }
 
 /* Style dla wymienionych inputów */
 input[type="submit"],
 input[type="reset"] {
-	padding: 0.5rem;
-	text-transform: uppercase;
-	font-weight: bold;
-	border-radius: 10px;
-	width: 100%;
-	background-color: var(--accent-color);
-	color: #fff;
-	cursor: pointer;
-	transition: background-color 0.3s ease-in-out;
+	padding: 0.5rem; /* Wewnętrzny margines */
+	text-transform: uppercase; /* Zamiana tekstu na wielkie litery */
+	font-weight: bold; /* Pogrubienie tekstu */
+	border-radius: 10px; /* Zaokrąglenie rogów */
+	width: 100%; /* Szerokość kontenera wynosi 100% */
+	background-color: var(--accent-color); /* Kolor tła */
+	color: #fff; /* Kolor tekstu */
+	cursor: pointer; /* Kursor wskazujący na możliwość kliknięcia */
+	transition: background-color 0.3s ease-in-out; /* Efekt przejścia */
 }
 
 /* Style po najechaniu kursorem dla wymienionych inputów */
 input[type="submit"]:hover,
 input[type="reset"]:hover {
-	background-color: #7a4d1d;
+	background-color: #7a4d1d; /* Zmiana koloru tła */
 }
 
 /*
@@ -75,40 +75,40 @@ musiałem wydzielić kilka klas dla ich różnych grup.
 
 /* Style dla grupy inputów nr. 1 */
 .input-group1 {
-	display: flex;
-	flex-direction: column;
-	gap: 0.2rem;
+	display: flex; /* Ustawienie kontenera na flexbox */
+	flex-direction: column; /* Ustawienie kierunku flexbox na kolumnę */
+	gap: 0.2rem; /* Odstęp między elementami w kontenerze */
 }
 
 /* Style dla grupy inputów nr. 2 */
 .input-group2 {
-	display: flex;
-	flex-direction: row;
-	gap: 0.5rem;
+	display: flex; /* Ustawienie kontenera na flexbox */
+	flex-direction: row; /* Ustawienie kierunku flexbox na wiersz */
+	gap: 0.5rem; /* Odstęp między elementami w kontenerze */
 }
 
 /* Style dla grupy inputów nr. 3 */
 .input-group3 {
-	width: 100%;
-	border: 1px solid black;
-	border-radius: 10px;
-	padding: 0.5rem 1rem;
-	display: block;
-	font-weight: bold;
+	width: 100%; /* Szerokość kontenera wynosi 100% */
+	border: 1px solid black; /* Obramowanie */
+	border-radius: 10px; /* Zaokrąglenie rogów */
+	padding: 0.5rem 1rem; /* Wewnętrzny margines */
+	display: block; /* Ustawienie kontenera na blok */
+	font-weight: bold; /* Pogrubienie tekstu */
 }
 
 /* Style dla pola typu "radio" z wyborem podmioru rezerwującego */
 .issuer {
-	display: flex;
-	width: 100%;
-	flex-direction: column;
-	justify-content: space-evenly;
+	display: flex; /* Ustawienie kontenera na flexbox */
+	width: 100%; /* Szerokość kontenera wynosi 100% */
+	flex-direction: column; /* Ustawienie kierunku flexbox na kolumnę */
+	justify-content: space-evenly; /* Rozłożenie elementów w kontenerze */
 }
 
 /* Style dla wiadomości z błędem */
 .error-message {
-	margin: 0.3rem 0;
-	color: var(--error-color);
+	margin: 0.3rem 0; /* Margines górny i dolny */
+	color: var(--error-color); /* Kolor tekstu */
 }
 
 /*
@@ -117,7 +117,7 @@ Style dla pudełka z błędem dla znaczników:
 */
 .error label,
 .error fieldset legend {
-	color: var(--error-color);
+	color: var(--error-color); /* Kolor tekstu */
 }
 
 /*
@@ -126,13 +126,13 @@ Style dla pudełka z błędem dla znaczników:
 */
 .error input,
 .error fieldset {
-	border: 3px solid var(--error-color);
+	border: 3px solid var(--error-color); /* Obramowanie */
 }
 
 /* Style dla wiadomości z informacją */
 .info-message {
-	margin: 0.3rem 0;
-	color: var(--info-color);
+	margin: 0.3rem 0; /* Margines górny i dolny */
+	color: var(--info-color); /* Kolor tekstu */
 }
 
 /*
@@ -140,7 +140,7 @@ Style dla pudełka z informacją dla znaczników:
 "label"
 */
 .info label {
-	color: var(--info-color);
+	color: var(--info-color); /* Kolor tekstu */
 }
 
 /*
@@ -148,60 +148,60 @@ Style dla pudełka z informacją dla znaczników:
 "input"
 */
 .info input {
-	border: 3px solid var(--info-color);
+	border: 3px solid var(--info-color); /* Obramowanie */
 }
 
 /* Style dla przycisków "submit" oraz "reset" w formularzu*/
 .input-buttons {
-	display: flex;
-	flex-direction: column;
-	gap: 1.5rem;
+	display: flex; /* Ustawienie kontenera na flexbox */
+	flex-direction: column; /* Ustawienie kierunku flexbox na kolumnę */
+	gap: 1.5rem; /* Odstęp między elementami w kontenerze */
 }
 
 /* Style dla karty z rezerwacją */
 .card {
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    width: 100%;
+    border: 1px solid #ccc; /* Obramowanie */
+    background-color: #f9f9f9; /* Kolor tła */
+    padding: 20px; /* Wewnętrzny margines */
+    border-radius: 5px; /* Zaokrąglenie rogów */
+    width: 100%; /* Szerokość kontenera wynosi 100% */
 }
 
 /* Zapytania o media dla minimalnej szerokości 480px */
 @media screen and (min-width: 480px) {
     .card {
-        max-width: 45rem;
+        max-width: 45rem; /* Maksymalna szerokość kontenera wynosi 45rem */
     }
 }
 
 /* Style dla nagłówka karty z rezerwacją */
 .card-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-    border-bottom: 1px solid #ccc;
-	padding-bottom: 1rem;
+	display: flex; /* Ustawienie kontenera na flexbox */
+	justify-content: space-between; /* Rozłożenie elementów w kontenerze */
+	align-items: center; /* Wyśrodkowanie elementów wzdłuż osi pionowej */
+    border-bottom: 1px solid #ccc; /* Obramowanie dolne */
+	padding-bottom: 1rem; /* Wewnętrzny margines dolny */
 }
 
 /* Style dla pojedynczych wierszy rezerwacji */
 .card-text {
-    margin: 10px 0;
+    margin: 10px 0; /* Margines górny i dolny */
 }
 
 /* Style dla sekcji z rezerwacjami */
 .reservation-section {
-	display: flex;
-	flex-direction: column;
+	display: flex; /* Ustawienie kontenera na flexbox */
+	flex-direction: column; /* Ustawienie kierunku flexbox na kolumnę */
 }
 
 /* Style dla sekcji z kartami rezerwacji */
 .reservations {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin: 2rem 0;
-    justify-items: center;
-    align-items: start;
+    display: grid; /* Ustawienie kontenera na siatkę */
+    grid-template-columns: 1fr; /* Ustawienie jednej kolumny */
+    gap: 2rem; /* Odstęp między elementami w kontenerze */
+    margin: 2rem 0; /* Margines górny i dolny */
+    justify-items: center; /* Wyrównanie elementów wzdłuż osi poziomej */
+    align-items: start; /* Wyrównanie elementów wzdłuż osi pionowej od góry */
 }
 
 /* Zapytania o media dla minimalnej szerokości 768px */
@@ -226,19 +226,19 @@ Style dla pudełka z informacją dla znaczników:
 
 /* Style dla przycisku usunięcia rezerwacji */
 .delete-button {
-	background-color: var(--error-color);
-	color: #fff;
-	border: none;
-	padding: 0.5rem 1rem;
-	border-radius: 5px;
-	cursor: pointer;
-	font-weight: bold;
-	transition: background-color 0.3s ease-in-out;
+	background-color: var(--error-color); /* Kolor tła */
+	color: #fff; /* Kolor tekstu */
+	border: none; /* Usunięcie obramowania */
+	padding: 0.5rem 1rem; /* Wewnętrzny margines */
+	border-radius: 5px; /* Zaokrąglenie rogów */
+	cursor: pointer; /* Kursor wskazujący na możliwość kliknięcia */
+	font-weight: bold; /* Pogrubienie tekstu */
+	transition: background-color 0.3s ease-in-out; /* Efekt przejścia */
 }
 
 /* Style po najechaniu na przycisk usunięcia rezerwacji */
 .delete-button:hover {
-	background-color: #580303;
+	background-color: #580303; /* Zmiana koloru tła */
 }
 
 /*
@@ -246,15 +246,15 @@ Style dla przycisku wypełnienia formularza,
 jeśli rezerwacja już istnieje
 */
 #fill-button {
-	padding: 0.5rem;
-	text-transform: uppercase;
-	font-weight: bold;
-	border-radius: 10px;
-	width: 100%;
-	background-color: var(--info-color);
-	color: #fff;
-	cursor: pointer;
-	transition: background-color 0.3s ease-in-out;
+	padding: 0.5rem; /* Wewnętrzny margines */
+	text-transform: uppercase; /* Zamiana tekstu na wielkie litery */
+	font-weight: bold; /* Pogrubienie tekstu */
+	border-radius: 10px; /* Zaokrąglenie rogów */
+	width: 100%; /* Szerokość kontenera wynosi 100% */
+	background-color: var(--info-color); /* Kolor tła */
+	color: #fff; /* Kolor tekstu */
+	cursor: pointer; /* Kursor wskazujący na możliwość kliknięcia */
+	transition: background-color 0.3s ease-in-out; /* Efekt przejścia */
 }
 
 /* 
@@ -262,5 +262,5 @@ Style po najechaniu na przycisk wypełnienia formularza,
 jeśli rezerwacja już istnieje
 */
 #fill-button:hover {
-	background-color: #1b70b5;
+	background-color: #1b70b5; /* Zmiana koloru tła */
 }

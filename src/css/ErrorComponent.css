@@ -2,38 +2,38 @@
 
 /* Style dla głównego kontenera komponentu */
 .error-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    display: flex; /* Ustawienie kontenera na flexbox */
+    flex-direction: column; /* Ustawienie kierunku flexbox na kolumnę */
+    justify-content: center; /* Wyśrodkowanie elementów wzdłuż osi pionowej */
+    align-items: center; /* Wyśrodkowanie elementów wzdłuż osi poprzecznej */
+    text-align: center; /* Wyśrodkowanie tekstu */
 }
 
 /* Style dla tytułu błędu: "Błąd <kod_błędu> */
 .error-title {
-    font-size: 4em;
-    margin-bottom: 20px;
+    font-size: 4em; /* Rozmiar czcionki */
+    margin-bottom: 20px; /* Margines dolny */
 }
 
 /* Style dla wiadomości błędu */
 .error-message {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
+    font-size: 1.5rem; /* Rozmiar czcionki */
+    margin-bottom: 40px; /* Margines dolny */
 }
 
 /* Style dla przycisku powrotu do strony głównej */
 .error-button {
-    padding: 10px 20px;
-    font-size: 1.5rem;
-    color: #fff;
-    background-color: var(--error-color);
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+    padding: 10px 20px; /* Wewnętrzny margines przycisku */
+    font-size: 1.5rem; /* Rozmiar czcionki */
+    color: #fff; /* Kolor tekstu */
+    background-color: var(--error-color); /* Kolor tła */
+    border: none; /* Usunięcie obramowania */
+    border-radius: 5px; /* Zaokrąglenie rogów */
+    text-decoration: none; /* Usunięcie podkreślenia */
+    transition: background-color 0.3s ease; /* Efekt przejścia */
 }
 
 /* Style po najechaniu na przycisk */
 .error-button:hover {
-	background-color: #b22d24;
+	background-color: #b22d24; /* Zmiana koloru tła */
 }

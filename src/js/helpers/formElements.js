@@ -37,6 +37,7 @@ export const getFormElements = () => {
 	
 				return {
 					message: 'Podaj poprawny adres email',
+					// Sprawdzamy, czy wartość pasuje do wyrażenia regularnego oraz czy nie przekracza maksymalnej długości
 					valid: value.match(emailRegEx) && value.length <= emailMaxLen,
 				}
 			}
@@ -185,6 +186,7 @@ export const getFormElements = () => {
 					valid: false
 				}
 	
+				// Rozdzielamy godzinę i minuty, a następnie zamieniamy je na liczby
 				const [hours, minutes] = value.split(':').map(Number)
 				const time = hours * 100 + minutes
 	

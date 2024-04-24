@@ -2,58 +2,58 @@
 
 /* Style dla głównego kontenera z mapką */
 .contact-localization {
-	display: flex;
-	width: 100%;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	padding: 10px;
-	gap: 0.5rem;
+	display: flex; /* Ustawienie kontenera na flexbox */
+	width: 100%; /* Szerokość kontenera */
+	flex-wrap: wrap; /* Zawijanie elementów w kontenerze */
+	justify-content: space-between; /* Rozłożenie elementów w kontenerze */
+	padding: 10px; /* Wewnętrzny margines kontenera */
+	gap: 0.5rem; /* Odstęp między elementami w kontenerze */
 }
 
 /* Style dla głównego kontenera komponentu */
 .contact-container {
-	display: flex;
-	width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-between;
-	gap: 2rem;
+	display: flex; /* Ustawienie kontenera na flexbox */
+	width: 100%; /* Szerokość kontenera */
+    flex-wrap: wrap; /* Zawijanie elementów w kontenerze */
+    justify-content: space-between; /* Rozłożenie elementów w kontenerze */
+	gap: 2rem; /* Odstęp między elementami w kontenerze */
 }
 
 /* Style dla kontenera mapki */
 .googlemap {
-	width: 100%;
-	margin: auto;
-	background: gray;
-	overflow: hidden;
+	width: 100%; /* Szerokość kontenera */
+	margin: auto; /* Automatyczne wyśrodkowanie kontenera */
+	background: gray; /* Kolor tła kontenera */
+	overflow: hidden; /* Ukrycie elementów, które nie mieszczą się w kontenerze */
 }
 
 /* Style bezpośrednio dla mapki */
 .googlemap > iframe {
-    width: 100%;
-    height: auto;
-    min-height: 70vh;
-    border: 0;
+    width: 100%; /* Szerokość mapki */
+    height: auto; /* Wysokość mapki */
+    min-height: 70vh; /* Minimalna wysokość mapki */
+    border: 0; /* Usunięcie obramowania mapki */
 }
 
 /* Style dla kontenera z informacjami kontaktowymi bez mapki */
 .contact-section {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-	gap: 1rem;
+    display: flex; /* Ustawienie kontenera na flexbox */
+    flex-wrap: wrap; /* Zawijanie elementów w kontenerze */
+    padding: 10px; /* Wewnętrzny margines kontenera */
+	gap: 1rem; /* Odstęp między elementami w kontenerze */
 }
 
 /* Style dla następujących informacji: adres email, numery telefonu, adres */
 .contact-ways {
-	margin: 0;
-	padding: 0 20px;
+	margin: 0; /* Zerowanie marginesu zewnętrznego */
+	padding: 0 20px; /* Wewnętrzny margines */
 }
 
 /* Zapytania o media */
 @media screen and (min-width: 1400px) {
 	/* Zmiana orientacji konenera z kolumny na wiersz */
 	.contact-info {
-		flex-direction: row;
+		flex-direction: row; /* Ustawienie kierunku flexbox na wiersz */
 	}
 
 	/* 
@@ -72,12 +72,12 @@
 
 /* Style dla maila */
 .contact-mail {
-	text-decoration: underline;
+	text-decoration: underline; /* Podkreślenie tekstu */
 }
 
 /* Style dla linku do rezerwacji */
 .contact-inner-link {
-	text-decoration: underline;
-	font-weight: bold;
-	font-style: italic;
+	text-decoration: underline; /* Podkreślenie tekstu */
+	font-weight: bold; /* Pogrubienie tekstu */
+	font-style: italic; /* Pochylenie tekstu */
 }

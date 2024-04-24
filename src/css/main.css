@@ -4,8 +4,8 @@
 * {
 	/* padding i border są zawarte wewnątrz szerokości i wysokości elementu, a nie dodawane do niej */
 	box-sizing: border-box;
-	border-width: 0;
-	margin: 0;
+	border-width: 0; /* Szerokość obramowania dla wszystkich elementów wynosi 0 */
+	margin: 0; /* Margines dla wszystkich elementów wynosi 0 */
 }
 
 /* Style dla znacznika html */
@@ -62,8 +62,8 @@ svg {
 	czyli zaczyna się od nowej linii i zajmuje całą dostępną szerokość
 	*/
   	display: block;
-	max-width: 100%;
-	height: auto;
+	max-width: 100%; /* Maksymalna szerokość obrazka wynosi 100% */
+	height: auto; /* Wysokość obrazka jest automatycznie dostosowywana */
 }
 
 /* 
@@ -72,7 +72,7 @@ Pomocnicza klasa do np. usuwania elementów menu mobilnego
 na desktopie lub elementów, które nie powinny być aktualnie widoczne.
 */
 .hidden {
-	display: none;
+	display: none; /* Ukrycie elementu */
 }
 
 /*
@@ -93,170 +93,170 @@ Style dla znacznika #app.
 Jest to główny kontener, w którym znajduje się cała zawartość podstron SPA.
 */
 #app {
-	margin: 0 1.5rem; 
-	gap: 1.5rem; 
-    min-height: 85vh;
+	margin: 0 1.5rem;  /* Marginesy poziome wynoszą 1.5rem */
+	gap: 1.5rem; /* Odstęp między elementami w kontenerze wynosi 1.5rem */
+    min-height: 85vh; /* Minimalna wysokość kontenera wynosi 85vh, czyli 85% wysokości widoku */
 }
 
 /* Zapytanie o media dla minimalnej szerokości 768px */
 @media screen and (min-width: 768px) {
 	#app {
-		margin-left: 7rem;
-		margin-right: 7rem; 
-		min-height: 90vh;
+		margin-left: 7rem; /* Lewy margines wynosi 7rem */
+		margin-right: 7rem; /* Prawy margines wynosi 7rem */
+		min-height: 90vh; /* Minimalna wysokość kontenera wynosi 90vh, czyli 90% wysokości widoku */
 	}
 }
 
 /* Style dla nagłówka strony. Znajduje się tu nawigacja oraz banner z godzinami otwarcia */
 .header {
-	position: sticky; 
-	top: 0; 
-	z-index: 50; 
-	background-color: #ffffff; 
+	position: sticky; /* Ustawienie pozycji na "sticky", czyli element "przykleja" się do góry ekranu */
+	top: 0; /* Odległość od góry ekranu wynosi 0 */
+	z-index: 50; /* Z-index wynosi 50, czyli element jest na wierzchu */
+	background-color: #ffffff;  /* Kolor tła */
 	/* cień, żeby nagłówek nie zlewał się z elementami "pod nim" */
 	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
 }
 
 /* Style dla baneru z godzinami otwarcia */
 .banner {
-	padding-top: 0.25rem;
-	padding-bottom: 0.25rem; 
-	padding-left: 1rem;
-	padding-right: 1rem; 
-	font-size: 0.75rem;
-	line-height: 1rem; 
-	text-align: center; 
-	font-weight: 650;
-	color: #ffffff; 
-	background: var(--primary-color);
+	padding-top: 0.25rem; /* Wewnętrzny margines górny wynosi 0.25rem */
+	padding-bottom: 0.25rem; /* Wewnętrzny margines dolny wynosi 0.25rem */
+	padding-left: 1rem; /* Wewnętrzny margines lewy wynosi 1rem */
+	padding-right: 1rem; /* Wewnętrzny margines prawy wynosi 1rem */
+	font-size: 0.75rem; /* Rozmiar czcionki wynosi 0.75rem */
+	line-height: 1rem;  /* Wysokość linii wynosi 1rem */
+	text-align: center; /* Wyśrodkowanie tekstu */
+	font-weight: 650; /* Pogrubienie tekstu */
+	color: #ffffff; /* Kolor tekstu */
+	background: var(--primary-color); /* Kolor tła */
 }
 
 /* Style dla stopki strony */
 footer {
-	display: flex; 
-	flex-direction: column; 
-	justify-content: center; 
-	align-items: center; 
-	padding: 1rem; 
-	font-weight: 900;
-	background: gray;
-	color: black;
-	font-size: 0.75rem;
-	line-height: 1rem; 
+	display: flex; /* Ustawienie kontenera na flexbox */
+	flex-direction: column; /* Ustawienie kierunku flexbox na kolumnę */
+	justify-content: center; /* Wyśrodkowanie elementów wzdłuż osi pionowej */
+	align-items: center; /* Wyśrodkowanie elementów wzdłuż osi poziomej */
+	padding: 1rem; /* Wewnętrzny margines wynosi 1rem */
+	font-weight: 900; /* Pogrubienie tekstu */
+	background: gray; /* Kolor tła */
+	color: black; /* Kolor tekstu */
+	font-size: 0.75rem; /* Rozmiar czcionki wynosi 0.75rem */
+	line-height: 1rem;  /* Wysokość linii wynosi 1rem */
 }
 
 /* Style dla głównego kontenera z nawigacją desktopową */
 .navigation {
-	display: flex; 
-	padding-left: 1.25rem;
-	padding-right: 1.25rem; 
-	justify-content: space-between; 
-	border-bottom-width: 2px; 
-	border-style: solid; 
-	width: 100%; 
-	font-weight: 700; 
-	border-color: var(--secondary-color);
+	display: flex; /* Ustawienie kontenera na flexbox */
+	padding-left: 1.25rem; /* Wewnętrzny margines lewy wynosi 1.25rem */
+	padding-right: 1.25rem; /* Wewnętrzny margines prawy wynosi 1.25rem */
+	justify-content: space-between; /* Rozłożenie elementów wzdłuż osi poziomej */
+	border-bottom-width: 2px; /* Szerokość obramowania dolnego wynosi 2px */
+	border-style: solid; /* Styl obramowania */
+	width: 100%; /* Szerokość kontenera wynosi 100% */
+	font-weight: 700; /* Pogrubienie tekstu */
+	border-color: var(--secondary-color); /* Kolor obramowania */
 }
 
 /* Style dla logo */
 .logo {
-	display: flex; 
-	gap: 0.5rem; 
-	align-items: center; 
-	height: 4rem; 
-	font-weight: 800; 
+	display: flex; /* Ustawienie kontenera na flexbox */
+	gap: 0.5rem; /* Odstęp między elementami w kontenerze */
+	align-items: center; /* Wyśrodkowanie elementów wzdłuż osi pionowej */
+	height: 4rem; /* Wysokość kontenera wynosi 4rem */
+	font-weight: 800; /* Pogrubienie tekstu */
 }
 
 /* Style dla obrazka w logo */
 .logo img {
-	width: 2.5rem; 
-	height: 2.5rem; 
+	width: 2.5rem; /* Szerokość obrazka wynosi 2.5rem */
+	height: 2.5rem;  /* Wysokość obrazka wynosi 2.5rem */
 }
 
 /* Style dla pomocniczego kontenera z menu desktopowym */
 .desktop-menu {
-	display: none; 
-	padding: 1.25rem; 
-	gap: 2rem; 
-	justify-content: center; 
-	align-items: center; 
-	list-style: none;
+	display: none; /* Ukrycie kontenera */
+	padding: 1.25rem; /* Wewnętrzny margines wynosi 1.25rem */
+	gap: 2rem; /* Odstęp między elementami w kontenerze */
+	justify-content: center; /* Wyśrodkowanie elementów wzdłuż osi poziomej */
+	align-items: center; /* Wyśrodkowanie elementów wzdłuż osi pionowej */
+	list-style: none; /* Usunięcie domyślnego stylu listy */
 }
 
 /* Style dla elementów menu desktopowego */
 .desktop-menu li a {
-	border-radius: 5px;
-	padding: 0.75rem 1rem;
-	transition: all 0.2s ease-in-out;
+	border-radius: 5px; /* Zaokrąglenie rogów */
+	padding: 0.75rem 1rem; /* Wewnętrzny margines wynosi 0.75rem na osi Y i 1rem na osi X */
+	transition: all 0.2s ease-in-out; /* Efekt przejścia */
 }
 
 /* Style dla elementów menu desktopowego po najechaniu kursorem */
 .desktop-menu li a:hover {
-	background-color: var(--accent-color);
-	color: white;
+	background-color: var(--accent-color); /* Zmiana koloru tła */
+	color: white; /* Zmiana koloru tekstu */
 }
 
 /* Style dla przycisku menu mobilnego */
 .mobile-menu-button {
-	display: flex; 
-	align-items: center; 
-	height: 4rem; 
-	font-style: italic; 
+	display: flex; /* Ustawienie kontenera na flexbox */
+	align-items: center; /* Wyśrodkowanie elementów wzdłuż osi pionowej */
+	height: 4rem; /* Wysokość kontenera wynosi 4rem */
+	font-style: italic; /* Pochylenie tekstu */
 }
 
 /* Zapytania o media dla minimalnej szerokości 850px */
 @media (min-width: 850px) { 
 	.desktop-menu {
-		display: flex; 
-		flex-direction: row; 
+		display: flex; /* Wyświetlenie kontenera */
+		flex-direction: row; /* Ustawienie kierunku flexbox na wiersz */
 	}
 
 	.mobile-menu-button {
-		display: none; 
+		display: none; /* Ukrycie kontenera */
 	}
 
 	.mobile-menu-trigger {
-		display: none; 
+		display: none; /* Ukrycie kontenera */
 	}
 }
 
 /* Style dla obrazku typu "burger button" dla przycisku menu mobilnego */
 .mobile-menu-button svg {
-	width: 2.5rem; 
-	height: 2.5rem;
+	width: 2.5rem; /* Szerokość obrazka wynosi 2.5rem */
+	height: 2.5rem; /* Wysokość obrazka wynosi 2.5rem */
 }
 
 /* Style dla kontenera pomocniczego menu mobilnego */
 .mobile-menu {
-	display: flex; 
-	position: absolute; 
-	padding: 0.5rem 1rem; 
-	flex-direction: column; 
-	gap: 0.25rem; 
-	width: 100%; 
-	font-weight: 700; 
-	letter-spacing: 0.05em; 
-	color: #ffffff; 
-	text-transform: uppercase; 
-	background: var(--secondary-color);
+	display: flex; /* Ustawienie kontenera na flexbox */
+	position: absolute; /* Ustawienie pozycji na "stałą" względem całego dokumentu */
+	padding: 0.5rem 1rem; /* Wewnętrzny margines wynosi 0.5rem na osi Y i 1rem na osi X */
+	flex-direction: column; /* Ustawienie kierunku flexbox na kolumnę */
+	gap: 0.25rem; /* Odstęp między elementami w kontenerze */
+	width: 100%; /* Szerokość kontenera wynosi 100% */
+	font-weight: 700; /* Pogrubienie tekstu */
+	letter-spacing: 0.05em; /* Rozstawienie liter */
+	color: #ffffff; /* Kolor tekstu */
+	text-transform: uppercase; /* Zamiana tekstu na wielkie litery */
+	background: var(--secondary-color); /* Kolor tła */
 }
 
 /* Style dla elementów menu mobilnego */
 .mobile-menu li {
-	display: flex; 
-	width: 100%; 
-	text-align: center; 
+	display: flex; /* Ustawienie kontenera na flexbox */
+	width: 100%; /* Szerokość kontenera wynosi 100% */
+	text-align: center; /* Wyśrodkowanie tekstu */
 }
 
 /* Style dla przycisków menu mobilnego */
 .mobile-menu li a {
-	width: 100%; 
-	border-radius: 10px;
-	padding: 0.25rem 0;
-	transition: all 0.2s ease-in-out;
+	width: 100%; /* Szerokość kontenera wynosi 100% */
+	border-radius: 10px; /* Zaokrąglenie rogów */
+	padding: 0.25rem 0; /* Wewnętrzny margines wynosi 0.25rem na osi Y i 0 na osi X */
+	transition: all 0.2s ease-in-out; /* Efekt przejścia */
 }
 
 /* Style dla przycisków menu mobilnego po najechaniu kursorem */
 .mobile-menu li a:hover {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color); /* Zmiana koloru tła */
 }
