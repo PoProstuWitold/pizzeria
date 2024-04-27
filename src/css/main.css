@@ -36,6 +36,7 @@ body {
 	font-family: sans-serif;
 	/* Ustawia kolor tekstu na zmienną CSS o nazwie "primary-color" */
 	color: var(--primary-color);
+	/* Podmiana kursora */
 	cursor: url('../assets/img/cursor.cur'), default; 
 }
 
