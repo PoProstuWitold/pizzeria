@@ -28,8 +28,14 @@ Aplikacja posiada też obraz dockerowy, który można odpalić wykonując kolejn
 docker buildx b -t poprostuwitold/pizzeria .
 ```
 
+``bash
+docker run -p 3005:3005 -–pid=host -it poprostuwitold/pizzeria
+``
+
+Jeśli powyższa komenda z jakiegoś powodu nie zadziała można użyć (na niektórych urządzeniach działają obie, a na innych tylko ta poniższa):
+
 ```bash
-docker run -p 3005:3005 --network=host -it poprostuwitold/pizzeria
+docker run --network=host --pid=host -it poprostuwitold/pizzeria
 ```
 
 W obu przypadkach aplikacja będzie dostępna pod adresem ``localhost:3005`` lub ``TWOJE_IPv4:3005``.
