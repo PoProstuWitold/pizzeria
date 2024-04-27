@@ -28,9 +28,9 @@ Aplikacja posiada też obraz dockerowy, który można odpalić wykonując kolejn
 docker buildx b -t poprostuwitold/pizzeria .
 ```
 
-``bash
+```bash
 docker run -p 3005:3005 -–pid=host -it poprostuwitold/pizzeria
-``
+```
 
 Jeśli powyższa komenda z jakiegoś powodu nie zadziała można użyć (na niektórych urządzeniach działają obie, a na innych tylko ta poniższa):
 
