@@ -17,6 +17,10 @@ export const AboutComponent = () => {
 				<a class="source-code-link" href="https://github.com/PoProstuWitold/pizzeria" target="_blank">strony</a>.
 				Stronę zaprojektował i zaprogramował <i>Witold Adam Zawada</i>.
 			</p>
+			<p>
+			Strona nie używa żadnych bibliotek ani frameworków. Jest napisana w czystym JavaScript, HTML i CSS oraz
+			serwowana jest przez serwer Node.js.
+			</p>
 		</section>
 	`
 
